@@ -1,0 +1,16 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="middleHillGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B6F47;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6B5638;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Transparent background -->
+  <rect width="1920" height="1080" fill="transparent"/>
+  
+  <!-- Middle hills with richer tones -->
+  <path d="M 0 680 Q 250 550 500 600 Q 750 650 1000 580 Q 1250 520 1500 600 Q 1750 650 1920 620 L 1920 1080 L 0 1080 Z" 
+        fill="url(#middleHillGradient)" opacity="0.85"/>
+  <path d="M 0 750 Q 350 620 700 680 Q 1050 740 1400 660 Q 1650 600 1920 690 L 1920 1080 L 0 1080 Z" 
+        fill="#7A5C3E" opacity="0.75"/>
+</svg>

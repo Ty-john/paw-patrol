@@ -1,0 +1,73 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="darkHillGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#689F38;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#558B2F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Transparent background -->
+  <rect width="1920" height="1080" fill="transparent"/>
+  
+  <!-- Front dark green hills -->
+  <path d="M 0 820 Q 150 750 300 790 Q 450 830 600 770 Q 750 710 900 780 Q 1050 840 1200 790 Q 1350 740 1500 800 Q 1650 850 1800 810 Q 1875 790 1920 800 L 1920 1080 L 0 1080 Z" 
+        fill="url(#darkHillGradient)"/>
+  
+  <!-- Foreground grass layer -->
+  <path d="M 0 880 Q 200 830 400 870 Q 600 910 800 850 Q 1000 800 1200 860 Q 1400 910 1600 870 Q 1800 840 1920 880 L 1920 1080 L 0 1080 Z" 
+        fill="#4CAF50"/>
+  
+  <!-- Large foreground trees -->
+  <!-- Tree 1 -->
+  <ellipse cx="180" cy="800" rx="50" ry="70" fill="#2E7D32"/>
+  <ellipse cx="160" cy="790" rx="40" ry="55" fill="#388E3C"/>
+  <ellipse cx="200" cy="795" rx="45" ry="60" fill="#388E3C"/>
+  <rect x="170" y="850" width="20" height="50" fill="#5D4037"/>
+  
+  <!-- Tree 2 -->
+  <ellipse cx="420" cy="810" rx="55" ry="75" fill="#2E7D32"/>
+  <ellipse cx="395" cy="800" rx="45" ry="60" fill="#388E3C"/>
+  <ellipse cx="445" cy="805" rx="48" ry="65" fill="#388E3C"/>
+  <rect x="408" y="865" width="24" height="55" fill="#5D4037"/>
+  
+  <!-- Tree 3 -->
+  <ellipse cx="720" cy="790" rx="60" ry="80" fill="#2E7D32"/>
+  <ellipse cx="690" cy="780" rx="50" ry="65" fill="#388E3C"/>
+  <ellipse cx="750" cy="785" rx="52" ry="70" fill="#388E3C"/>
+  <rect x="706" y="850" width="28" height="60" fill="#5D4037"/>
+  
+  <!-- Tree 4 -->
+  <ellipse cx="1050" cy="820" rx="48" ry="68" fill="#2E7D32"/>
+  <ellipse cx="1030" cy="810" rx="40" ry="55" fill="#388E3C"/>
+  <ellipse cx="1070" cy="815" rx="42" ry="58" fill="#388E3C"/>
+  <rect x="1039" y="870" width="22" height="52" fill="#5D4037"/>
+  
+  <!-- Tree 5 -->
+  <ellipse cx="1380" cy="830" rx="52" ry="72" fill="#2E7D32"/>
+  <ellipse cx="1355" cy="820" rx="43" ry="58" fill="#388E3C"/>
+  <ellipse cx="1405" cy="825" rx="46" ry="62" fill="#388E3C"/>
+  <rect x="1368" y="882" width="24" height="54" fill="#5D4037"/>
+  
+  <!-- Tree 6 -->
+  <ellipse cx="1650" cy="840" rx="45" ry="65" fill="#2E7D32"/>
+  <ellipse cx="1630" cy="832" rx="38" ry="52" fill="#388E3C"/>
+  <ellipse cx="1670" cy="835" rx="40" ry="55" fill="#388E3C"/>
+  <rect x="1640" y="885" width="20" height="48" fill="#5D4037"/>
+  
+  <!-- Bushes and grass details -->
+  <ellipse cx="280" cy="880" rx="35" ry="25" fill="#2E7D32"/>
+  <ellipse cx="550" cy="890" rx="40" ry="28" fill="#2E7D32"/>
+  <ellipse cx="870" cy="875" rx="38" ry="26" fill="#2E7D32"/>
+  <ellipse cx="1180" cy="895" rx="42" ry="30" fill="#2E7D32"/>
+  <ellipse cx="1520" cy="885" rx="36" ry="27" fill="#2E7D32"/>
+  <ellipse cx="1780" cy="900" rx="39" ry="29" fill="#2E7D32"/>
+  
+  <!-- Small grass tufts -->
+  <circle cx="100" cy="920" r="15" fill="#1B5E20"/>
+  <circle cx="350" cy="935" r="18" fill="#1B5E20"/>
+  <circle cx="650" cy="925" r="16" fill="#1B5E20"/>
+  <circle cx="980" cy="940" r="17" fill="#1B5E20"/>
+  <circle cx="1280" cy="930" r="19" fill="#1B5E20"/>
+  <circle cx="1600" cy="945" r="16" fill="#1B5E20"/>
+  <circle cx="1850" cy="938" r="18" fill="#1B5E20"/>
+</svg>

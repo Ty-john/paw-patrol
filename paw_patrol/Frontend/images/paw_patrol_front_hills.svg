@@ -1,0 +1,49 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Transparent background -->
+  <rect width="1920" height="1080" fill="transparent"/>
+  
+  <!-- Front hills with vibrant Paw Patrol green -->
+  <path d="M 0 800 Q 200 700 400 750 Q 600 800 800 720 Q 1000 650 1200 740 Q 1400 800 1600 760 Q 1800 720 1920 780 L 1920 1080 L 0 1080 Z" 
+        fill="#7CB342" opacity="0.95"/>
+  
+  <!-- Grass texture on hills -->
+  <path d="M 0 850 Q 300 780 600 830 Q 900 880 1200 810 Q 1500 750 1920 840 L 1920 1080 L 0 1080 Z" 
+        fill="#66BB6A"/>
+  
+  <!-- Simple cartoon trees scattered on front hills -->
+  <!-- Tree 1 -->
+  <ellipse cx="250" cy="780" rx="45" ry="60" fill="#4CAF50"/>
+  <rect x="240" y="820" width="20" height="40" fill="#8D6E63"/>
+  
+  <!-- Tree 2 -->
+  <ellipse cx="450" cy="800" rx="35" ry="50" fill="#66BB6A"/>
+  <rect x="442" y="830" width="16" height="35" fill="#8D6E63"/>
+  
+  <!-- Tree 3 -->
+  <ellipse cx="700" cy="760" rx="50" ry="65" fill="#4CAF50"/>
+  <rect x="688" y="805" width="24" height="45" fill="#8D6E63"/>
+  
+  <!-- Tree 4 -->
+  <ellipse cx="950" cy="790" rx="40" ry="55" fill="#66BB6A"/>
+  <rect x="940" y="825" width="20" height="38" fill="#8D6E63"/>
+  
+  <!-- Tree 5 -->
+  <ellipse cx="1200" cy="770" rx="48" ry="62" fill="#4CAF50"/>
+  <rect x="1188" y="812" width="24" height="42" fill="#8D6E63"/>
+  
+  <!-- Tree 6 -->
+  <ellipse cx="1450" cy="810" rx="38" ry="52" fill="#66BB6A"/>
+  <rect x="1441" y="842" width="18" height="36" fill="#8D6E63"/>
+  
+  <!-- Tree 7 -->
+  <ellipse cx="1700" cy="795" rx="42" ry="58" fill="#4CAF50"/>
+  <rect x="1690" y="833" width="20" height="40" fill="#8D6E63"/>
+  
+  <!-- Small bushes for detail -->
+  <circle cx="350" cy="850" r="25" fill="#558B2F"/>
+  <circle cx="600" cy="860" r="20" fill="#558B2F"/>
+  <circle cx="850" cy="845" r="22" fill="#558B2F"/>
+  <circle cx="1100" cy="855" r="24" fill="#558B2F"/>
+  <circle cx="1350" cy="850" r="21" fill="#558B2F"/>
+  <circle cx="1600" cy="862" r="23" fill="#558B2F"/>
+</svg>

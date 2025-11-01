@@ -1,0 +1,53 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#5DADE2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3498DB;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="1920" height="1080" fill="url(#skyGradient)"/>
+  
+  <!-- Sun glow -->
+  <ellipse cx="960" cy="320" rx="400" ry="300" fill="url(#sunGlow)"/>
+  
+  <!-- Light rays -->
+  <g opacity="0.3">
+    <polygon points="960,250 750,1080 850,1080" fill="#FFFFFF"/>
+    <polygon points="960,250 850,1080 950,1080" fill="#FFFFFF" opacity="0.7"/>
+    <polygon points="960,250 1050,1080 1150,1080" fill="#FFFFFF"/>
+    <polygon points="960,250 1150,1080 1250,1080" fill="#FFFFFF" opacity="0.7"/>
+    <polygon points="960,250 650,1080 720,1080" fill="#FFFFFF" opacity="0.5"/>
+    <polygon points="960,250 1280,1080 1350,1080" fill="#FFFFFF" opacity="0.5"/>
+  </g>
+  
+  <!-- Fluffy clouds -->
+  <g opacity="0.9">
+    <!-- Cloud 1 -->
+    <ellipse cx="300" cy="200" rx="80" ry="50" fill="#FFFFFF"/>
+    <ellipse cx="250" cy="210" rx="60" ry="40" fill="#FFFFFF"/>
+    <ellipse cx="340" cy="215" rx="70" ry="45" fill="#FFFFFF"/>
+    
+    <!-- Cloud 2 -->
+    <ellipse cx="1600" cy="180" rx="90" ry="55" fill="#FFFFFF"/>
+    <ellipse cx="1550" cy="195" rx="65" ry="45" fill="#FFFFFF"/>
+    <ellipse cx="1650" cy="200" rx="75" ry="50" fill="#FFFFFF"/>
+    
+    <!-- Cloud 3 -->
+    <ellipse cx="600" cy="150" rx="70" ry="45" fill="#FFFFFF"/>
+    <ellipse cx="560" cy="160" rx="55" ry="35" fill="#FFFFFF"/>
+    <ellipse cx="635" cy="165" rx="60" ry="40" fill="#FFFFFF"/>
+    
+    <!-- Cloud 4 -->
+    <ellipse cx="1300" cy="220" rx="75" ry="48" fill="#FFFFFF"/>
+    <ellipse cx="1260" cy="232" rx="58" ry="38" fill="#FFFFFF"/>
+    <ellipse cx="1340" cy="235" rx="65" ry="42" fill="#FFFFFF"/>
+  </g>
+</svg>

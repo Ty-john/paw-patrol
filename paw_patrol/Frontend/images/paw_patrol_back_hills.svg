@@ -1,0 +1,16 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hillGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C19A6B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Transparent background -->
+  <rect width="1920" height="1080" fill="transparent"/>
+  
+  <!-- Back hills silhouettes -->
+  <path d="M 0 600 Q 300 450 600 500 T 1200 480 T 1920 520 L 1920 1080 L 0 1080 Z" 
+        fill="url(#hillGradient)" opacity="0.7"/>
+  <path d="M 0 650 Q 400 500 800 550 T 1400 530 T 1920 580 L 1920 1080 L 0 1080 Z" 
+        fill="#E6B88A" opacity="0.6"/>
+</svg>
