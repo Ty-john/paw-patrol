@@ -193,26 +193,391 @@ main section h2 {
     margin-bottom: 25px;
 }
 
-/* Article blocks */
-main section article {
-    background: #F8E4C9;
-    margin: 20px auto;
+/*
+    HOMAPAGE ABOUT US
+*/
+main section#about {
+    display: flex;
+    flex-direction: column;
     width: 80%;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    margin: 0 auto;
+}
+
+section#about div.about-header { 
+    text-align: left; 
+    margin-bottom: 20px;
+}
+section#about div.about-header h2 { margin: 0;}
+
+    /* Upper About Us: Mission and Team*/
+section#about div.upper-about {
+    display: flex;
+    flex-wrap: wrap;
     text-align: left;
+    align-items: center;
+    justify-content: space-between;
+}
+div.upper-about aside.mission-vision {
+    width: 35%;
 }
 
-section article h3 {
-    color: #4B2E05;
-    margin-bottom: 10px;
+div.upper-about aside.our-team {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
 }
 
-section article p {
+div.upper-about aside.our-team div.team-img-container {
+    width: 100%;
+    height: 300px;
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    position: relative;
+}
+    div.upper-about aside.our-team div.team-img-container img {
+        object-fit: cover;
+        object-position: 50% 35%; 
+        border-radius: 30px;
+        width: 100%;
+        height: 100%; 
+        display: block;
+    }
+
+div.upper-about aside.our-team div.team-people-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+div.upper-about aside.our-team div.team-people-container article {
+    text-align: center;
+}
+div.upper-about aside.our-team div.team-people-container article h3, p { margin: 0; }
+
+section#about hr { /* LINE BREAK */
+    padding: 7px;
+    background-color: #8b5e3c7a;
+    width: 100%;
+    margin: 50px 0 10px 0;
+    border-radius: 10px;
+    border: none;
+    box-sizing: border-box;
+}
+
+    /* Bottom About Us: Gallery */
+main section#about div.bottom-about {
+    display: flex;
+    flex-direction: column;
+}
+
+section#about div.bottom-about h3 { 
+    text-align: left;
+    margin: 5px 0;
+    font-size: 24px;
+}
+div.bottom-about aside.gallery { margin-bottom: 40px; }
+div.bottom-about div.gallery-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: flex-start; /* let children determine their own height */
+    margin-bottom: 18px; /* spacing so following content doesn't overlap */
+}
+div.bottom-about div.gallery-container article.focal-gallery {
+    width: 250px;
+    min-height: 270px; /* ensure focal has visual height but allow growth */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+    div.bottom-about div.gallery-container article.focal-gallery:hover {
+        transform: scale(1.03);
+    }
+    div.bottom-about div.gallery-container article.focal-gallery img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+    div.gallery-container article.focal-gallery i, div.gallery-card i {
+        position: absolute;
+        background: #ddc8b8;
+        padding: 7px;
+        border-radius: 50%;
+        right: 8px;
+        top: 8px;
+    }
+
+div.bottom-about div.gallery-container article.series-gallery {
+    width: 78%;
+    height: auto; /* allow gallery to grow with wrapped rows */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* gallery cards: fixed height, width controlled by flex-basis */
+div.bottom-about div.gallery-container article.series-gallery div.gallery-card {
+    display: flex;
+    flex: 0 0 220px; /* default width */
+    height: 125px;    /* fixed height so hover only affects width */
+    position: relative;
+    overflow: hidden;
+    transition: flex-basis 0.35s ease, opacity 0.25s ease;
+}
+div.bottom-about div.gallery-container article.series-gallery div.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Interactive gallery hover behavior
+   - Hovered image expands
+   - On wide screens (items beside each other): non-hovered siblings decrease width
+   - On narrow screens (items stack): non-hovered siblings decrease height (scaleY)
+*/
+div.bottom-about div.gallery-container {
+    align-items: stretch;
+}
+
+/* allow smooth resizing */
+div.bottom-about div.gallery-container article.focal-gallery,
+div.bottom-about div.gallery-container article.series-gallery {
+    transition: width 0.35s ease, transform 0.25s ease;
+}
+
+/* focal expands slightly on hover and pushes series to shrink */
+div.bottom-about div.gallery-container article.focal-gallery:hover {
+    width: 28%;
+    transform: translateZ(0) scale(1.02);
+}
+div.bottom-about div.gallery-container article.focal-gallery:hover + article.series-gallery {
+    width: 70%;
+}
+
+/* Allow series cards to shrink when the focal is hovered (width-only change) */
+div.bottom-about div.gallery-container article.focal-gallery:hover + article.series-gallery div.gallery-card {
+    flex: 1 1 180px; /* allow shrink; base width 180px */
+    min-width: 120px; /* prevent collapsing too small */
+}
+
+/* series gallery cards behavior */
+div.bottom-about div.gallery-container article.series-gallery div.gallery-card {
+    /* transition set on the card definition above; keep here for clarity */
+    transition: flex-basis 0.35s ease, opacity 0.25s ease;
+    will-change: flex-basis;
+    z-index: 1;
+}
+div.bottom-about div.gallery-container article.series-gallery div.gallery-card:hover {
+    flex-basis: 260px; /* expand hovered card (width only) */
+    z-index: 3; /* bring forward */
+}
+
+/* Desktop: default card width and adjacency-only shrinking (only immediate neighbors change) */
+@media (min-width: 900px) {
+    div.bottom-about div.gallery-container article.series-gallery div.gallery-card {
+        flex: 0 0 220px;
+    }
+    /* hovered card expands */
+    div.bottom-about div.gallery-container article.series-gallery div.gallery-card:hover {
+        flex-basis: 260px;
+        z-index: 3;
+    }
+    /* next sibling (immediate right) shrinks */
+    div.bottom-about div.gallery-container article.series-gallery div.gallery-card:hover + .gallery-card {
+        flex-basis: 180px;
+        opacity: 0.95;
+    }
+    /* previous sibling (immediate left) - uses :has to select the card that has a next sibling hovered */
+    div.bottom-about div.gallery-container article.series-gallery div.gallery-card:has(+ .gallery-card:hover) {
+        flex-basis: 180px;
+        opacity: 0.95;
+    }
+}
+
+/* Mobile / narrow: two-per-row layout, adjacency-only width changes */
+@media (max-width: 899px) {
+    div.bottom-about div.gallery-container article.series-gallery div.gallery-card {
+        flex: 0 0 45%; /* two per row */
+        height: 125px; /* keep fixed height */
+    }
+    div.bottom-about div.gallery-container article.series-gallery div.gallery-card:hover {
+        flex-basis: 52%; /* expanded width on hover */
+        z-index: 3;
+    }
+    div.bottom-about div.gallery-container article.series-gallery div.gallery-card:hover + .gallery-card,
+    div.bottom-about div.gallery-container article.series-gallery div.gallery-card:has(+ .gallery-card:hover) {
+        flex-basis: 38%;
+        opacity: 0.95;
+    }
+}
+
+    /* Bottom About Us: News & Blog */
+section#about div.bottom-about {
+    box-sizing: border-box;
+}
+section#about div.bottom-about hr {
     margin: 0;
+    border-radius: 10px 10px 0 0;
+}    
+section#about div.bottom-about aside.news-blog {
+    background-color: #e4d5ca38;
+    padding: 15px 15px 20px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0 0 20px 20px;
 }
 
+section#about div.bottom-about aside.news-blog div.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+div.bottom-about aside.news-blog div.news-container article.news-card {
+    width: 275px;
+    text-align: left;
+    min-height: 200px;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    position: relative;
+}
+    div.bottom-about aside.news-blog div.news-container article.news-card:first-child {
+        background-color: #8b5e3c2c;
+    }
+div.bottom-about aside.news-blog div.news-container article.news-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+div.bottom-about aside.news-blog div.news-container article.news-card p {
+    font-size: 13px;
+}
+   
+div.bottom-about aside.news-blog div.news-container article.news-card a {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 2px solid #8B5E3C;
+    color: #6B3E1E;
+}
+    div.bottom-about aside.news-blog div.news-container article.news-card a:hover {
+        background-color: #8B5E3C;
+        color: white;
+    }
+
+
+/*
+    HOMEPAGE ADOPT
+*/
+main section#adopt {
+    background-color: white;
+    min-height: 60vh;
+}
+
+main section#adopt h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+main section#adopt h2 i {
+    font-size: 22px;
+    margin-left: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+    main section#adopt h2:hover i {
+        transform: translateX(8px);
+    } 
+
+main section#adopt div.container-adopt-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+section#adopt div.container-adopt-card aside.adopt-card {
+    position: relative;
+    background-color: rgb(230, 230, 230);
+    height: 250px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+    section#adopt div.container-adopt-card aside.adopt-card:hover {
+        transform: scale(1.05);
+    }
+
+div.container-adopt-card aside.adopt-card div.adopt-img-container {
+    height: 200px;
+    display: flex;
+}
+    aside.adopt-card div.adopt-img-container img {
+        object-fit: cover;
+        width: 100%;
+        border-radius: 10px;
+    }
+div.container-adopt-card aside.adopt-card h3 {
+    background-color: white;
+    padding: 25px 0;
+    bottom: -20px;
+    position: absolute;
+    width: 100%;
+    border-radius: 35% 35% 10px 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+    /* Adopt Buttons*/
+section#adopt div.adopt-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 75%;
+    min-height: 225px;
+    margin: 80px auto 0 auto;
+}
+section#adopt div.adopt-buttons aside {
+    width: 250px;
+    height: 225px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+section#adopt div.adopt-buttons aside i {
+    font-size: 30px;
+}
+section#adopt div.adopt-buttons aside h3 {
+    font-size: 20px;
+}
+section#adopt div.adopt-buttons aside a {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+
+    /* center the anchor horizontally within the aside */
+    transform: translateX(-50%);
+    display: inline-block;
+    padding: 8px 18px;
+    background-color: #8B5E3C;
+    color: #fff;
+    border-radius: 30px;
+    text-align: center;
+}
+    section#adopt div.adopt-buttons aside a:hover {
+        background-color: #FFE4B5;
+        color: #4a3220;
+    }
 
 
 /* 

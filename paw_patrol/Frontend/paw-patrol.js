@@ -1,3 +1,12 @@
+// Fetch JSON Files
+async function loadJSON(path) {
+    const response = await fetch(path);
+    if(!response.ok) {
+        throw new Error(`Failed to load ${path}`);
+    }
+    return await response.json();
+}
+
 const toggleMenu = document.getElementById('menu-toggle');
 const sideMenu = document.getElementById('small-screen-menu');
 const iconChange = toggleMenu.querySelector('i');
@@ -65,3 +74,117 @@ document.querySelectorAll('.footer-info-container article aside h4').forEach(inf
   document.addEventListener('DOMContentLoaded', updateParallax);
   updateParallax();
 })();
+
+// Populate Gallery 
+const galleryList = [
+    { "image" : "images/adoptImages/name2.jpg" },
+    { "image" : "images/adoptImages/name3.jpg" },
+    { "image" : "images/adoptImages/name4.jpg" },
+    { "image" : "images/adoptImages/name2.jpg" },
+    { "image" : "images/adoptImages/name4.jpg" },
+    { "image" : "images/adoptImages/name2.jpg" },
+    { "image" : "images/adoptImages/name4.jpg" },
+    { "image" : "images/adoptImages/name3.jpg" },
+];
+
+async function makeGallery() {
+    const galleryContainer = document.getElementById('series-gallery');
+
+    galleryList.forEach(img => {
+        const imgContainer = document.createElement('div');
+        imgContainer.classList.add('gallery-card');
+
+        imgContainer.innerHTML = `
+            <i class="fa-solid fa-paw"></i>
+            <img src="${img.image}">
+        `;
+
+        galleryContainer.appendChild(imgContainer);
+    });
+}
+
+// Populate News & Blog
+
+const newsList = [
+    {
+        "headline": "Meet Our Newly Rescued Pets",
+        "story": "Discover the latest animals who have joined our care—each with a unique story and ready for a fresh start"
+    },
+    {
+        "headline": "Tips for First-Time Pet Adopters",
+        "story": "Thinking about adopting your first pet? Here are simple, essential tips to help you prepare"
+    },
+    {
+        "headline": "Community Adoption Drive Success",
+        "story": "Our recent adoption event brought together families, volunteers, and pets in need"
+    },
+    {
+        "headline": "How We Rehabilitate Rescued Animals",
+        "story": "Go behind the scenes and see how our team provides medical care and emotional support"
+    }
+];
+
+async function makeNewsHomepage() {
+    const newsContainer = document.getElementById('news-container');
+
+    newsList.forEach(news => {
+        const newsCard = document.createElement('article');
+        newsCard.classList.add('news-card');
+
+        newsCard.innerHTML = `
+            <h4>${news.headline}</h4>
+            <p>${news.story}</p>
+            <a href="">Read More</a>
+        `;
+        newsContainer.appendChild(newsCard);
+    });
+}
+
+
+// Populate Adopt Cards for Homepage
+const adoptList = [
+    {
+        "image": "images/adoptImages/name1.jpg",
+        "name": "name 1"
+    },
+    {
+        "image": "images/adoptImages/name2.jpg",
+        "name": "name 2"
+    },
+    {
+        "image": "images/adoptImages/name3.jpg",
+        "name": "name 3"
+    },
+    {
+        "image": "images/adoptImages/name4.jpg",
+        "name": "name 4"
+    },
+    {
+        "image": "images/logo1.png",
+        "name": "MEET MORE"
+    }
+];
+
+async function makeAdoptHomepage() {
+    const adoptContainer = document.getElementById('container-adopt-card');
+
+    adoptList.forEach(card => {
+        const adoptCard = document.createElement('aside');
+        adoptCard.classList.add('adopt-card');
+
+        adoptCard.innerHTML = `
+            <div class="adopt-img-container">
+                <img src="${card.image}">
+            </div>
+            <h3>${card.name}</h3>
+        `;
+        adoptContainer.appendChild(adoptCard);
+    });
+}
+
+// Populate adopt cards when the DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    makeAdoptHomepage();
+    makeGallery();
+    makeNewsHomepage();
+});
