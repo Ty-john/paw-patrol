@@ -53,6 +53,14 @@ header aside.logo-container h3 {
     font-weight: 600;
 }
 
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit; /* keeps the h3 white */
+}
+
+
 header div.logo-img-container {
     height: 35px;
     width: 35px;

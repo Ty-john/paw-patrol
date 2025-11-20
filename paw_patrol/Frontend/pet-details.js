@@ -44,28 +44,33 @@ async function populatePetDetails() {
     }
 
     try {
-        // Set main image
-        document.getElementById('main-pet-image').src = pet.images[0];
-        document.getElementById('main-pet-image').alt = pet.name;
+            // Set main image to first pet image
+        const mainImage = document.getElementById('main-pet-image');
+        mainImage.src = pet.images[0];
+        mainImage.alt = pet.name;
 
         // Populate thumbnails
         const thumbnailsContainer = document.getElementById('thumbnails-container');
+        thumbnailsContainer.innerHTML = ''; // clear any old thumbnails
+
         pet.images.forEach((image, index) => {
             const thumbnail = document.createElement('img');
             thumbnail.src = image;
             thumbnail.alt = `${pet.name} photo ${index + 1}`;
             thumbnail.className = index === 0 ? 'active' : '';
             thumbnail.addEventListener('click', () => {
-                // Remove active class from all thumbnails
                 document.querySelectorAll('.pet-gallery-thumbnails img').forEach(img => {
                     img.classList.remove('active');
                 });
-                // Add active class to clicked thumbnail
                 thumbnail.classList.add('active');
-                // Update main image
-                document.getElementById('main-pet-image').src = image;
+                mainImage.src = image;
             });
             thumbnailsContainer.appendChild(thumbnail);
+        });
+
+        const adoptBtn = document.getElementById('adoptBtn');
+        adoptBtn.addEventListener('click', () => {
+            window.location.href = `adoptForm.html?id=${pet.id}`;
         });
 
         // Set pet header
@@ -90,6 +95,7 @@ async function populatePetDetails() {
 
         // Set location
         document.getElementById('pet-location').textContent = pet.location;
+
         
         console.log('Pet details populated successfully');
     } catch (error) {
