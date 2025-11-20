@@ -1,0 +1,95 @@
+{
+  "pets": [
+    {
+      "id": 1,
+      "name": "Leonard",
+      "type": "Golden Retriever",
+      "breed": "Golden Retriever",
+      "age": "3 years",
+      "gender": "Male",
+      "size": "Large",
+      "location": "Downtown Shelter",
+      "about": "Leonard is a friendly and energetic Golden Retriever who loves to play fetch and swim. He's great with families and other dogs. Leonard is looking for an active home where he can get plenty of exercise and cuddles.",
+      "health": [
+        "Fully vaccinated",
+        "Microchipped",
+        "Neutered",
+        "Health checked - No issues"
+      ],
+      "images": [
+        "images/adoptImages/name1.jpg",
+        "images/adoptImages/name2.jpg",
+        "images/adoptImages/name3.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ian",
+      "type": "Labrador Mix",
+      "breed": "Labrador Mix",
+      "age": "2 years",
+      "gender": "Male",
+      "size": "Medium",
+      "location": "Westside Shelter",
+      "about": "Ian is a cheerful and loyal Labrador mix with a heart full of love. He enjoys long walks and is perfect for families with children. Ian is well-behaved and house-trained.",
+      "health": [
+        "Fully vaccinated",
+        "Microchipped",
+        "Neutered",
+        "Heartworm negative",
+        "Up to date on flea prevention"
+      ],
+      "images": [
+        "images/adoptImages/name2.jpg",
+        "images/adoptImages/name3.jpg",
+        "images/adoptImages/name4.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Tyrone",
+      "type": "German Shepherd",
+      "breed": "German Shepherd",
+      "age": "4 years",
+      "gender": "Male",
+      "size": "Large",
+      "location": "North District Shelter",
+      "about": "Tyrone is an intelligent and protective German Shepherd who bonds deeply with his family. He's trained in basic obedience and would do best in a home with an experienced dog owner. Tyrone loves playing and going on adventures.",
+      "health": [
+        "Fully vaccinated",
+        "Microchipped",
+        "Neutered",
+        "Health checked - Excellent condition",
+        "Recent dental cleaning"
+      ],
+      "images": [
+        "images/adoptImages/name3.jpg",
+        "images/adoptImages/name4.jpg",
+        "images/adoptImages/name1.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Zweily",
+      "type": "Siamese Cat",
+      "breed": "Siamese Mix",
+      "age": "1 year",
+      "gender": "Female",
+      "size": "Small",
+      "location": "Downtown Shelter",
+      "about": "Zweily is a beautiful Siamese mix with striking blue eyes and a vocal personality. She's playful, intelligent, and loves interactive toys. Zweily would be perfect for someone looking for an affectionate and entertaining feline companion.",
+      "health": [
+        "Fully vaccinated",
+        "Microchipped",
+        "Spayed",
+        "Health checked - No issues",
+        "Indoor cat recommended"
+      ],
+      "images": [
+        "images/adoptImages/name4.jpg",
+        "images/adoptImages/name2.jpg",
+        "images/adoptImages/name3.jpg"
+      ]
+    }
+  ]
+}

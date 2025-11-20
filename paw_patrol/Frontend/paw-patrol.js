@@ -89,6 +89,7 @@ const galleryList = [
 
 async function makeGallery() {
     const galleryContainer = document.getElementById('series-gallery');
+    if (!galleryContainer) return; // Exit if element doesn't exist
 
     galleryList.forEach(img => {
         const imgContainer = document.createElement('div');
@@ -126,6 +127,7 @@ const newsList = [
 
 async function makeNewsHomepage() {
     const newsContainer = document.getElementById('news-container');
+    if (!newsContainer) return; // Exit if element doesn't exist
 
     newsList.forEach(news => {
         const newsCard = document.createElement('article');
@@ -144,29 +146,35 @@ async function makeNewsHomepage() {
 // Populate Adopt Cards for Homepage
 const adoptList = [
     {
+        "id": 1,
         "image": "images/adoptImages/name1.jpg",
-        "name": "name 1"
+        "name": "Leonard"
     },
     {
+        "id": 2,
         "image": "images/adoptImages/name2.jpg",
-        "name": "name 2"
+        "name": "Ian"
     },
     {
+        "id": 3,
         "image": "images/adoptImages/name3.jpg",
-        "name": "name 3"
+        "name": "Tyrone"
     },
     {
+        "id": 4,
         "image": "images/adoptImages/name4.jpg",
-        "name": "name 4"
+        "name": "Zweily"
     },
     {
+        "id": null,
         "image": "images/logo1.png",
-        "name": "MEET MORE"
+        "name": "Meet More"
     }
 ];
 
 async function makeAdoptHomepage() {
     const adoptContainer = document.getElementById('container-adopt-card');
+    if (!adoptContainer) return; // Exit if element doesn't exist
 
     adoptList.forEach(card => {
         const adoptCard = document.createElement('aside');
@@ -178,6 +186,15 @@ async function makeAdoptHomepage() {
             </div>
             <h3>${card.name}</h3>
         `;
+        
+        // Add click event if pet has an ID
+        if (card.id) {
+            adoptCard.style.cursor = 'pointer';
+            adoptCard.addEventListener('click', () => {
+                window.location.href = `pet-details.html?id=${card.id}`;
+            });
+        }
+        
         adoptContainer.appendChild(adoptCard);
     });
 }

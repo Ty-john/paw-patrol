@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Details | Paw Patrol</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <aside class="logo-container">
+            <div class="logo-img-container">
+                <img src="./images/logo1.png" alt="">
+            </div>
+            <h3>Paw Patrol</h3>
+        </aside>
+  
+        <nav class="navigation" id="nav-menu">
+            <a href="homepage.html">Home</a>
+            <a href="homepage.html#adopt">Adopt</a>
+            <a href="homepage.html#about">About Us</a>
+            <a href="homepage.html#help">Get Involved</a>
+            <a href="homepage.html#care">Petcare Tips</a>
+        </nav>
+        
+        <div class="small-screen-menu" id="small-screen-menu">
+            <a href="homepage.html">Home</a>
+            <a href="homepage.html#adopt">Adopt</a>
+            <a href="homepage.html#about">About Us</a>
+            <a href="homepage.html#help">Get Involved</a>
+            <a href="homepage.html#care">Petcare Tips</a>
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="pet-details-main">
+        <div class="pet-details-container">
+            <!-- Image Gallery -->
+            <section class="pet-gallery-section">
+                <div class="pet-gallery-main">
+                    <img id="main-pet-image" src="" alt="Pet photo">
+                </div>
+                <div class="pet-gallery-thumbnails" id="thumbnails-container">
+                    <!-- Thumbnails populated by JS -->
+                </div>
+            </section>
+
+            <!-- Pet Info -->
+            <section class="pet-info-section">
+                <div class="pet-header">
+                    <h1 id="pet-name"></h1>
+                    <p id="pet-type-location"></p>
+                </div>
+
+                <div class="pet-details-grid">
+                    <article class="detail-card">
+                        <h3>About</h3>
+                        <p id="pet-about"></p>
+                    </article>
+
+                    <article class="detail-card">
+                        <h3>Pet Details</h3>
+                        <ul id="pet-specs">
+                            <!-- Populated by JS -->
+                        </ul>
+                    </article>
+
+                    <article class="detail-card">
+                        <h3>Health & Vaccination</h3>
+                        <ul id="pet-health">
+                            <!-- Populated by JS -->
+                        </ul>
+                    </article>
+
+                    <article class="detail-card">
+                        <h3>Location</h3>
+                        <p id="pet-location"></p>
+                    </article>
+                </div>
+
+                <div class="pet-actions">
+                    <a href="" class="btn btn-primary">Adopt Me</a>
+                    <a href="homepage.html#adopt" class="btn btn-secondary">Back to Adoption</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <section class="upper-footer">
+            <div class="footer-logo-container" id="footer-logo-container">
+                <div class="footer-img-container">
+                    <img src="./images/logo1.png" alt="">
+                </div>
+                <h3>Paw Patrol</h3>
+            </div>
+            
+            <div class="footer-info-container" id="footer-info-container">
+                <article>
+                    <aside>
+                        <h4>RESOURCES <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">FAQs</a>
+                        <a href="">Partnerships</a>
+                        <a href="">Contact Us</a>
+                    </aside>
+                    <aside>
+                        <h4>GET INVOLVED <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">Get Involve</a>
+                        <a href="">Adopting Pets</a>
+                        <a href="">Animal Shelters & Rescues</a>
+                        <a href="">Other Types of Pets</a>
+                    </aside>
+                    <aside>
+                        <h4>ABOUT DOGS & PUPPIES <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">All About Dogs</a>
+                        <a href="">Dog Adoption</a>
+                        <a href="">Dog Feeding</a>
+                        <a href="">Dog Health & Wellness</a>
+                        <a href="">Dog Training</a>
+                        <a href="">Other Dog Pet Information</a>
+                    </aside>
+                    <aside>
+                        <h4>ABOUT CATS & KITTENS <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">All About Cats</a>
+                        <a href="">Cat Adoption</a>
+                        <a href="">Cat Feeds</a>
+                        <a href="">Cat Health & Wellness</a>
+                        <a href="">Cat Training</a>
+                        <a href="">Other Cat Information</a>
+                    </aside>
+                </article>
+                
+                <aside class="footer-sign-up">
+                    <p>To get the latest on pet adoption and pet care, sign up for the Paw Patrol newsletter.</p>
+                    <a href="" class="sign-up-btn">Sign Up</a>
+                </aside>
+            </div>
+
+            <div class="legal-info">
+                <a href="">Shelter & Rescue Registration</a>
+                <a href="">Terms of Service</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Cookie Policy</a>
+                <a href="">Accesibility</a>
+            </div>
+        </section>
+
+        <section class="lower-footer">
+            <div>
+                <p>
+                    <span>&copy;2025 Paw Patrol.netlify.app</span>   
+                    <span>All trademarks are owned by Tomioka-san, or used with permission.</span>
+                </p>
+                <aside>
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </aside>
+            </div>
+        </section>
+    </footer>
+
+    <script src="pet-details.js"></script>
+</body>
+</html>
