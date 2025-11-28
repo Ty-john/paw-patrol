@@ -1,0 +1,204 @@
+/* =Main Container = */
+.volunteer-main {
+    padding-top: 120px;
+    background-color: #f8f9fa; /* Added a slight background color for contrast */
+    padding-bottom: 60px;
+}
+
+.volunteer-container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* =Main Page Header= */
+.volunteer-container > .volunteer-page-header {
+    width: 100%;
+    text-align: center;
+    border: none;
+    margin-bottom: 10px;
+}
+.volunteer-page-header h1 {
+    margin: 0;
+    font-size: 40px; 
+    color: #7C3AED;
+    font-family: 'LEMON', sans-serif; 
+}
+.volunteer-page-header p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #666;
+    font-weight: 500;
+}
+
+
+/* =MAIN FORM CARD= */
+.volunteer-form {
+  max-width: 1100px;
+  width: 100%;
+  margin: 20px auto;
+  background: white;
+  padding: 40px 50px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+  box-sizing: border-box; 
+}
+
+/* =SECTION GRID LAYOUT (Desktop Default)= */
+.form-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 40px;
+  text-align: left;
+  margin-top: 30px;
+}
+
+/* =HEADERS INSIDE FORM= */
+.volunteer-form-header {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #f0e7ff;
+  padding-bottom: 20px;
+}
+.volunteer-form-header h1 {
+  margin: 0;
+  font-size: 36px; 
+  color: #7C3AED;
+  font-family: 'LEMON', sans-serif; 
+}
+.volunteer-form-header p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* H3 headers for sections */
+aside h3 {
+    color: #4a5568;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* =FORM FIELD GROUP= */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #374151;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input, select, textarea {
+  width: 100%;
+  max-width: 100%; 
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid #E9D5FF;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-sizing: border-box; 
+  font-family: inherit;
+}
+
+textarea {
+    resize: vertical; 
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #7C3AED;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1); 
+  transform: translateY(-2px); 
+}
+
+/* =BUTTONS (Desktop Style)= */
+.volunteer-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+  justify-content: flex-start;
+}
+
+.btn {
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-width: 160px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #7C3AED;
+  color: white;
+  border: 2px solid #7C3AED;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: #6D28D9;
+  border-color: #6D28D9;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #7C3AED;
+  border: 2px solid #E9D5FF;
+}
+.btn-secondary:hover {
+  background: #FAF5FF;
+  border-color: #7C3AED;
+  transform: translateY(-3px);
+}
+
+
+/* =RESPONSIVE FALLBACK (Mobile View)= */
+@media (max-width: 768px) {
+  .volunteer-main {
+      padding-top: 80px;
+  }
+  
+  .volunteer-form {
+      padding: 25px 20px;
+      margin: 10px auto;
+      border-radius: 16px;
+  }
+
+  .volunteer-page-header h1 {
+    font-size: 32px;
+  }
+  .volunteer-page-header p {
+    font-size: 16px;
+  }
+
+  /* Change grid to 1 single column for mobile */
+  .form-sections {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Make buttons stretch full width again on mobile */
+  .volunteer-actions {
+    flex-direction: column-reverse; 
+    gap: 15px;
+  }
+  
+  .btn {
+      width: 100%; 
+      padding: 16px;
+  }
+}

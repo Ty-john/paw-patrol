@@ -12,6 +12,10 @@ body {
     color: #4C1D95;
     line-height: 1.6;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 a {
     text-decoration: none;
@@ -52,6 +56,7 @@ header aside.logo-container h3 {
     font-size: 18px;
     font-weight: 600;
     font-family: 'LEMON';
+    color: white;
 }
 
 .logo-link {
@@ -1248,3 +1253,5 @@ footer section.lower-footer div aside a {
         padding: 90px 15px 40px 15px;
     }
 }
+
+/* Adoption Form*/

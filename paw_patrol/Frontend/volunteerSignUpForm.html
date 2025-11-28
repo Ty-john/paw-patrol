@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Sign-up Form</title>
+    <link rel="stylesheet" href="styles.css"> <link rel="stylesheet" href="volunteerSignUpForm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+        <a href="homepage.html" class="logo-link">
+        <aside class="logo-container">
+            <div class="logo-img-container">
+                <img src="./images/logo1.png" alt="">
+            </div>
+            <h3>Paw Patrol</h3>
+        </aside>
+        </a>
+    
+        <nav class="navigation" id="nav-menu">
+            <a href="homepage.html">Home</a>
+            <a href="homepage.html#adopt">Adopt</a>
+            <a href="homepage.html#about">About Us</a>
+            <a href="homepage.html#help">Get Involved</a>
+            <a href="homepage.html#care">Petcare Tips</a>
+        </nav>
+        
+           <div class="small-screen-menu" id="small-screen-menu">
+            <a href="homepage.html">Home</a>
+            <a href="homepage.html#adopt">Adopt</a>
+            <a href="homepage.html#about">About Us</a>
+            <a href="homepage.html#help">Get Involved</a>
+            <a href="homepage.html#care">Petcare Tips</a>
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <main class="volunteer-main">
+        <section class="volunteer-container">
+
+            <div class="volunteer-page-header">
+                <h1>Become a Paw Patrol Volunteer</h1>
+                <p>Join our team and make a difference in the lives of animals!</p>
+            </div>
+
+            <form class="volunteer-form">
+                <div class="volunteer-form-header">
+                    <h1>🤝 Volunteer with Us</h1>
+                    <p>Your time and passion can save lives!</p>
+                </div>
+
+                <div class="form-sections">
+
+                    <aside>
+                        <h3>Your Contact Information</h3>
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Juan Dela Cruz">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="you@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="0912 345 6789">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" name="address" required placeholder="Complete Address">
+                        </div>
+                    </aside>
+
+                    <aside>
+                        <h3>Your Availability & Skills</h3>
+
+                        <div class="form-group">
+                            <label for="availability">Preferred Availability</label>
+                            <select id="availability" name="availability" required>
+                                <option value="" disabled selected>Select</option>
+                                <option>Weekdays (Morning)</option>
+                                <option>Weekdays (Afternoon)</option>
+                                <option>Weekends (Morning)</option>
+                                <option>Weekends (Afternoon)</option>
+                                <option>Flexible</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="areaOfInterest">Area of Interest</label>
+                            <select id="areaOfInterest" name="areaOfInterest" required>
+                                <option value="" disabled selected>Select</option>
+                                <option>Animal Care (feeding, walking)</option>
+                                <option>Event Support & Fundraising</option>
+                                <option>Administrative Tasks</option>
+                                <option>Social Media & Outreach</option>
+                                <option>Fostering Animals</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">Relevant Experience (optional)</label>
+                            <textarea id="experience" name="experience" rows="4" placeholder="Tell us about any relevant experience you have with animals or volunteering..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="whyVolunteer">Why do you want to volunteer?</label>
+                            <textarea id="whyVolunteer" name="whyVolunteer" rows="5" required placeholder="Share your motivation..."></textarea>
+                        </div>
+                    </aside>
+
+                </div>
+
+                <div class="volunteer-actions">
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                    <a href="homepage.html#help" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <section class="upper-footer">
+            <div class="footer-logo-container" id="footer-logo-container">
+                <div class="footer-img-container">
+                    <img src="./images/logo1.png" alt="">
+                </div>
+                <h3>Paw Patrol</h3>
+            </div>
+            
+            <div class="footer-info-container" id="footer-info-container">
+                <article>
+                    <aside>
+                        <h4>RESOURCES <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">FAQs</a>
+                        <a href="">Partnerships</a>
+                        <a href="">Contact Us</a>
+                    </aside>
+                    <aside>
+                        <h4>GET INVOLVED <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">Get Involve</a>
+                        <a href="">Adopting Pets</a>
+                        <a href="">Animal Shelters & Rescues</a>
+                        <a href="">Other Types of Pets</a>
+                    </aside>
+                    <aside>
+                        <h4>ABOUT DOGS & PUPPIES <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">All About Dogs</a>
+                        <a href="">Dog Adoption</a>
+                        <a href="">Dog Feeding</a>
+                        <a href="">Dog Health & Wellness</a>
+                        <a href="">Dog Training</a>
+                        <a href="">Other Dog Pet Information</a>
+                    </aside>
+                    <aside>
+                        <h4>ABOUT CATS & KITTENS <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">All About Cats</a>
+                        <a href="">Cat Adoption</a>
+                        <a href="">Cat Feeds</a>
+                        <a href="">Cat Health & Wellness</a>
+                        <a href="">Cat Training</a>
+                        <a href="">Other Cat Information</a>
+                    </aside>
+                </article>
+                
+                <aside class="footer-sign-up">
+                    <p>To get the latest on pet adoption and pet care, sign up for the Paw Patrol newsletter.</p>
+                    <a href="" class="sign-up-btn">Sign Up</a>
+                </aside>
+            </div>
+
+            <div class="legal-info">
+                <a href="">Shelter & Rescue Registration</a>
+                <a href="">Terms of Service</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Cookie Policy</a>
+                <a href="">Accesibility</a>
+            </div>
+        </section>
+
+        <section class="lower-footer">
+            <div>
+                <p>
+                    <span>&copy;2025 Paw Patrol.netlify.app</span>   
+                    <span>All trademarks are owned by Tomioka-san, or used with permission.</span>
+                </p>
+                <aside>
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </aside>
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const smallScreenMenu = document.getElementById('small-screen-menu');
+
+            if (menuToggle && smallScreenMenu) {
+                menuToggle.addEventListener('click', () => {
+                    smallScreenMenu.classList.toggle('active');
+                    menuToggle.querySelector('i').classList.toggle('fa-bars');
+                    menuToggle.querySelector('i').classList.toggle('fa-xmark'); // Change to 'x' icon
+                });
+            }
+        });
+    </script>
+</body>
+</html>
