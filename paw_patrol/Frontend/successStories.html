@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories | Paw Patrol</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <a href="homepage.html" class="logo-link">
+        <aside class="logo-container">
+            <div class="logo-img-container">
+                <img src="./images/logo1.png" alt="">
+            </div>
+            <h3>Paw Patrol</h3>
+        </aside>
+        </a>
+  
+        <nav class="navigation" id="nav-menu">
+            <a href="homepage.html">Home</a>
+            <a href="homepage.html#adopt">Adopt</a>
+            <a href="homepage.html#about">About Us</a>
+            <a href="homepage.html#help">Get Involved</a>
+            <a href="homepage.html#care">Petcare Tips</a>
+        </nav>
+
+        <div class="small-screen-menu" id="small-screen-menu">
+            <a href="homepage.html">Home</a>
+            <a href="homepage.html#adopt">Adopt</a>
+            <a href="homepage.html#about">About Us</a>
+            <a href="homepage.html#help">Get Involved</a>
+            <a href="homepage.html#care">Petcare Tips</a>
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="success-stories-main">
+        <section class="success-stories-section">
+            <div class="stories-header">
+                <h1>Success Stories</h1>
+                <p>Heartwarming tales of pets finding their forever homes</p>
+            </div>
+
+            <!-- ACCORDION CONTAINER -->
+            <div class="stories-accordion">
+
+                <!-- STORY 1 -->
+                <article class="story-item">
+                    <div class="story-header" onclick="toggleStory(this)">
+                        <div class="story-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div class="story-title-section">
+                            <h3>Max's Journey: From Shelter to Showstopper</h3>
+                            <p class="story-meta"><i class="fa-solid fa-dog"></i> Golden Retriever</p>
+                        </div>
+                        <div class="story-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-image">
+                            <img src="images/successStoriesImages/success1.png" alt="Max">
+                        </div>
+                        <div class="story-text">
+                            <h4>The Story</h4>
+                            <p>Max came to us as a shy, neglected Golden Retriever who had spent over a year in the shelter. When the Martinez family first met him, he could barely make eye contact. After just three months with his new family, Max transformed into a confident, loving companion who now loves beach walks and playing fetch with the neighborhood kids.</p>
+                            
+                            <h4>Family Testimonial</h4>
+                            <p><em>"Max has brought so much joy to our family. We can't imagine life without him. He's not just our pet—he's a valued member of our family who greets us with excitement every single day. Adopting him was the best decision we ever made!"</em></p>
+                            
+                            <p class="story-quote">— The Martinez Family</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- STORY 2 -->
+                <article class="story-item">
+                    <div class="story-header" onclick="toggleStory(this)">
+                        <div class="story-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div class="story-title-section">
+                            <h3>Luna's Second Chance: A Healing Journey</h3>
+                            <p class="story-meta"><i class="fa-solid fa-cat"></i> Tabby Cat</p>
+                        </div>
+                        <div class="story-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-image">
+                            <img src="images/successStoriesImages/success2.jpeg" alt="Luna">
+                        </div>
+                        <div class="story-text">
+                            <h4>The Story</h4>
+                            <p>Luna was found abandoned on the streets, injured and frightened. Our rescue team nursed her back to health, but she remained traumatized and anxious. When Sarah, a retired nurse, adopted Luna, she provided the patient, loving care Luna desperately needed. Today, Luna is a confident, affectionate cat who loves sunbathing and cuddle sessions.</p>
+                            
+                            <h4>Family Testimonial</h4>
+                            <p><em>"Luna helped me heal as much as I helped her. She's taught me the true meaning of unconditional love and patience. Watching her grow from a scared kitten to the happy, playful cat she is today has been incredibly rewarding. She's my little angel."</em></p>
+                            
+                            <p class="story-quote">— Sarah Johnson</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- STORY 3 -->
+                <article class="story-item">
+                    <div class="story-header" onclick="toggleStory(this)">
+                        <div class="story-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div class="story-title-section">
+                            <h3>Charlie & Bailey: Best Friends Forever</h3>
+                            <p class="story-meta"><i class="fa-solid fa-dog"></i> Labrador Mix & German Shepherd</p>
+                        </div>
+                        <div class="story-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-image">
+                            <img src="images/successStoriesImages/success3.jpg" alt="Charlie & Bailey">
+                        </div>
+                        <div class="story-text">
+                            <h4>The Story</h4>
+                            <p>Charlie and Bailey came to our shelter together and we couldn't bear to separate them. The Thompson family fell in love with both dogs and decided to adopt them as a pair. The two have since become inseparable, completing each other's lives. They've become therapy dogs and now visit local nursing homes, bringing smiles to residents' faces.</p>
+                            
+                            <h4>Family Testimonial</h4>
+                            <p><em>"We thought adopting two dogs would be twice the work, but it's been twice the love! Charlie and Bailey are the best decision we've ever made together. Watching them play together and comfort each other makes our hearts so full."</em></p>
+                            
+                            <p class="story-quote">— The Thompson Family</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- STORY 4 -->
+                <article class="story-item">
+                    <div class="story-header" onclick="toggleStory(this)">
+                        <div class="story-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div class="story-title-section">
+                            <h3>Whiskers' New Beginning at Age 8</h3>
+                            <p class="story-meta"><i class="fa-solid fa-cat"></i> Senior Cat</p>
+                        </div>
+                        <div class="story-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-image">
+                            <img src="images/successStoriesImages/success4.jpg" alt="Whiskers">
+                        </div>
+                        <div class="story-text">
+                            <h4>The Story</h4>
+                            <p>Whiskers spent most of his life in a home with 12 other cats before his elderly owner had to surrender him. At 8 years old, many people overlooked him, but Robert and his daughter knew senior cats needed love too. Now in his forever home, Whiskers enjoys a peaceful life with plenty of attention, comfortable napping spots, and gourmet treats.</p>
+                            
+                            <h4>Family Testimonial</h4>
+                            <p><em>"People always want the kittens, but Whiskers proved that senior pets have so much love to give. He's the perfect companion—calm, affectionate, and so grateful for his comfortable home. We're honored to give him the retirement he deserves."</em></p>
+                            
+                            <p class="story-quote">— Robert and Emma Chen</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- STORY 5 -->
+                <article class="story-item">
+                    <div class="story-header" onclick="toggleStory(this)">
+                        <div class="story-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div class="story-title-section">
+                            <h3>Rocky: From Aggressive to Gentle</h3>
+                            <p class="story-meta"><i class="fa-solid fa-dog"></i> Pit Bull</p>
+                        </div>
+                        <div class="story-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-image">
+                            <img src="images/successStoriesImages/success5.jpg" alt="Rocky">
+                        </div>
+                        <div class="story-text">
+                            <h4>The Story</h4>
+                            <p>Rocky was a rescue dog with a reputation for aggression, but our trainers saw potential. Michael, an experienced dog handler, adopted Rocky and worked patiently with him. Through consistent training and unconditional love, Rocky's demeanor completely changed. Today, he's a certified therapy dog helping children build confidence and overcome their own fears.</p>
+                            
+                            <h4>Family Testimonial</h4>
+                            <p><em>"Rocky's transformation showed me that with patience and love, any dog can change. He's now helping kids and proving that breed stereotypes are wrong. He's the most gentle, loving boy you could ever meet. I'm so proud of him."</em></p>
+                            
+                            <p class="story-quote">— Michael Davis</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- STATS SECTION -->
+            <div class="success-stats">
+                <div class="stat-box">
+                    <div class="stat-number">2,500+</div>
+                    <p>Pets Adopted</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">98%</div>
+                    <p>Successful Placements</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <p>Happy Families</p>
+                </div>
+            </div>
+
+            <!-- CTA SECTION -->
+            <div class="stories-cta">
+                <h3>Ready to Create Your Own Success Story?</h3>
+                <p>Your perfect pet is waiting for you. Start the adoption journey today!</p>
+                <a href="adoptionProcess.html" class="btn btn-primary">Begin Adoption Process</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <section class="upper-footer">
+            <div class="footer-logo-container" id="footer-logo-container">
+                <div class="footer-img-container">
+                    <img src="./images/logo2.1.png" alt="">
+                </div>
+                <h3 style="font-family: 'LEMON'; font-size: 24px;">Paw Patrol</h3>
+            </div>
+            
+            <div class="footer-info-container" id="footer-info-container">
+                <article>
+                    <aside>
+                        <h4>RESOURCES <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">FAQs</a>
+                        <a href="">Partnerships</a>
+                        <a href="">Contact Us</a>
+                    </aside>
+                    <aside>
+                        <h4>GET INVOLVED <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">Get Involve</a>
+                        <a href="">Adopting Pets</a>
+                        <a href="">Animal Shelters & Rescues</a>
+                        <a href="">Other Types of Pets</a>
+                    </aside>
+                    <aside>
+                        <h4>ABOUT DOGS & PUPPIES <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">All About Dogs</a>
+                        <a href="">Dog Adoption</a>
+                        <a href="">Dog Feeding</a>
+                        <a href="">Dog Health & Wellness</a>
+                        <a href="">Dog Training</a>
+                        <a href="">Other Dog Pet Information</a>
+                    </aside>
+                    <aside>
+                        <h4>ABOUT CATS & KITTENS <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">All About Cats</a>
+                        <a href="">Cat Adoption</a>
+                        <a href="">Cat Feeds</a>
+                        <a href="">Cat Health & Wellness</a>
+                        <a href="">Cat Training</a>
+                        <a href="">Other Cat Information</a>
+                    </aside>
+                </article>
+                
+                <aside class="footer-sign-up">
+                    <p>To get the latest on pet adoption and pet care, sign up for the Paw Patrol newsletter.</p>
+                    <a href="" class="sign-up-btn">Sign Up</a>
+                </aside>
+            </div>
+
+            <div class="legal-info">
+                <a href="">Shelter & Rescue Registration</a>
+                <a href="">Terms of Service</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Cookie Policy</a>
+                <a href="">Accesibility</a>
+            </div>
+        </section>
+
+        <section class="lower-footer">
+            <div>
+                <p>
+                    <span>&copy;2025 Paw Patrol.netlify.app</span>   
+                    <span>All trademarks are owned by Tomioka-san, or used with permission.</span>
+                </p>
+                <aside>
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </aside>
+            </div>
+        </section>
+    </footer>
+
+    <script src="paw-patrol.js"></script>
+    <script>
+        function toggleStory(headerElement) {
+            const storyItem = headerElement.parentElement;
+            const storyContent = storyItem.querySelector('.story-content');
+            const toggleIcon = headerElement.querySelector('.story-toggle i');
+            
+            // Close other open stories
+            document.querySelectorAll('.story-item.active').forEach(item => {
+                if (item !== storyItem) {
+                    item.classList.remove('active');
+                    item.querySelector('.story-content').style.maxHeight = '0';
+                }
+            });
+            
+            // Toggle current story
+            storyItem.classList.toggle('active');
+            
+            if (storyItem.classList.contains('active')) {
+                storyContent.style.maxHeight = storyContent.scrollHeight + 'px';
+                toggleIcon.style.transform = 'rotate(180deg)';
+            } else {
+                storyContent.style.maxHeight = '0';
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>

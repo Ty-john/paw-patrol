@@ -44,86 +44,103 @@
     </header>
 
     <main class="volunteer-main">
-        <section class="volunteer-container">
+        <section class="volunteer-section">
 
-            <div class="volunteer-page-header">
+            <div class="volunteer-header">
                 <h1>Become a Paw Patrol Volunteer</h1>
                 <p>Join our team and make a difference in the lives of animals!</p>
             </div>
 
             <form class="volunteer-form">
-                <div class="volunteer-form-header">
-                    <h1>🤝 Volunteer with Us</h1>
-                    <p>Your time and passion can save lives!</p>
+                
+                <!-- CONTACT INFORMATION SECTION -->
+                <div class="form-section">
+                    <h2><i class="fa-solid fa-user"></i> Your Contact Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Juan Dela Cruz">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="you@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="0912 345 6789">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address <span class="required">*</span></label>
+                        <input type="text" id="address" name="address" required placeholder="Complete Address">
+                    </div>
                 </div>
 
-                <div class="form-sections">
+                <!-- AVAILABILITY & INTERESTS SECTION -->
+                <div class="form-section">
+                    <h2><i class="fa-solid fa-calendar"></i> Availability & Interests</h2>
+                    
+                    <div class="form-group">
+                        <label for="availability">Preferred Availability <span class="required">*</span></label>
+                        <select id="availability" name="availability" required>
+                            <option value="" disabled selected>Select your preferred time</option>
+                            <option>Weekdays (Morning)</option>
+                            <option>Weekdays (Afternoon)</option>
+                            <option>Weekends (Morning)</option>
+                            <option>Weekends (Afternoon)</option>
+                            <option>Flexible</option>
+                        </select>
+                    </div>
 
-                    <aside>
-                        <h3>Your Contact Information</h3>
+                    <div class="form-group">
+                        <label for="areaOfInterest">Area of Interest <span class="required">*</span></label>
+                        <select id="areaOfInterest" name="areaOfInterest" required>
+                            <option value="" disabled selected>Select your area of interest</option>
+                            <option>Animal Care (feeding, walking)</option>
+                            <option>Event Support & Fundraising</option>
+                            <option>Administrative Tasks</option>
+                            <option>Social Media & Outreach</option>
+                            <option>Fostering Animals</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="fullName">Full Name</label>
-                            <input type="text" id="fullName" name="fullName" required placeholder="Juan Dela Cruz">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="you@email.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="0912 345 6789">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="address">Address</label>
-                            <input type="text" id="address" name="address" required placeholder="Complete Address">
-                        </div>
-                    </aside>
-
-                    <aside>
-                        <h3>Your Availability & Skills</h3>
-
-                        <div class="form-group">
-                            <label for="availability">Preferred Availability</label>
-                            <select id="availability" name="availability" required>
-                                <option value="" disabled selected>Select</option>
-                                <option>Weekdays (Morning)</option>
-                                <option>Weekdays (Afternoon)</option>
-                                <option>Weekends (Morning)</option>
-                                <option>Weekends (Afternoon)</option>
-                                <option>Flexible</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="areaOfInterest">Area of Interest</label>
-                            <select id="areaOfInterest" name="areaOfInterest" required>
-                                <option value="" disabled selected>Select</option>
-                                <option>Animal Care (feeding, walking)</option>
-                                <option>Event Support & Fundraising</option>
-                                <option>Administrative Tasks</option>
-                                <option>Social Media & Outreach</option>
-                                <option>Fostering Animals</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="experience">Relevant Experience (optional)</label>
-                            <textarea id="experience" name="experience" rows="4" placeholder="Tell us about any relevant experience you have with animals or volunteering..."></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="whyVolunteer">Why do you want to volunteer?</label>
-                            <textarea id="whyVolunteer" name="whyVolunteer" rows="5" required placeholder="Share your motivation..."></textarea>
-                        </div>
-                    </aside>
-
+                    <div class="form-group">
+                        <label for="experience">Relevant Experience</label>
+                        <textarea id="experience" name="experience" rows="4" placeholder="Tell us about any relevant experience you have with animals or volunteering..."></textarea>
+                    </div>
                 </div>
 
+                <!-- MOTIVATION & COMMITMENT SECTION -->
+                <div class="form-section">
+                    <h2><i class="fa-solid fa-heart"></i> Your Motivation</h2>
+                    
+                    <div class="form-group">
+                        <label for="whyVolunteer">Why do you want to volunteer? <span class="required">*</span></label>
+                        <textarea id="whyVolunteer" name="whyVolunteer" rows="5" required placeholder="Share your motivation and what drives you to help animals..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="commitment">Commitment Level <span class="required">*</span></label>
+                        <select id="commitment" name="commitment" required>
+                            <option value="" disabled selected>Select your commitment level</option>
+                            <option>A few hours per week</option>
+                            <option>1-2 days per week</option>
+                            <option>3+ days per week</option>
+                            <option>As needed (flexible)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- INFO BOX -->
+                <div class="volunteer-info-box">
+                    <h3><i class="fa-solid fa-lightbulb"></i> What to Expect</h3>
+                    <p>After submitting your application, our team will review it and contact you within 3-5 business days. We'll discuss available positions, schedule a brief orientation, and get you started on your volunteer journey!</p>
+                </div>
+
+                <!-- FORM ACTIONS -->
                 <div class="volunteer-actions">
                     <button type="submit" class="btn btn-primary">Submit Application</button>
                     <a href="homepage.html#help" class="btn btn-secondary">Cancel</a>
