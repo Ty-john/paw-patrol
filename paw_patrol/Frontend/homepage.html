@@ -12,12 +12,12 @@
     <!-- ========== HEADER ========== -->
     <header>
         <a href="#" class="logo-link">
-        <aside class="logo-container">
-            <div class="logo-img-container">
-                <img src="./images/logo1.png" alt="">
-            </div>
-            <h3>Paw Patrol</h3>
-        </aside>
+            <aside class="logo-container">
+                <div class="logo-img-container">
+                    <img src="./images/logo1.png" alt="">
+                </div>
+                <h3>Paw Patrol</h3>
+            </aside>
         </a>
   
         <nav class="navigation" id="nav-menu">
@@ -43,28 +43,26 @@
         </div>
     </header>
 
-    <!-- ========== HERO SECTION ========== -->
-   <section class="hero">
-        <div class="parallax-wrapper">
-            <div class="layer sky"></div>
-            <div class="layer mid"></div>
-            <div class="layer tower"></div>
-            <div class="layer back"></div>
-            <div class="layer front"></div>
-        </div>
-
-        <div class="hero-content">
-            <h2>Find Your Furever Friend 🐾</h2>
-            <p>Open your heart and home — adopt a pet today!</p>
-            <a href="#adopt" class="btn">Adopt Today</a>
-        </div>
-    </section>
-
-
     <!-- ========== MAIN CONTENT ========== -->
-    <main>
+    <main class="main-content page active" id="main-content">
+            <!-- ========== HERO SECTION ========== -->
+        <section class="hero">
+            <div class="parallax-wrapper">
+                <div class="layer sky"></div>
+                <div class="layer mid"></div>
+                <div class="layer tower"></div>
+                <div class="layer back"></div>
+                <div class="layer front"></div>
+            </div>
 
-        <!-- ===== Adopt a Pet ===== -->
+            <div class="hero-content">
+                <h2>Find Your Furever Friend 🐾</h2>
+                <p>Open your heart and home — adopt a pet today!</p>
+                <a href="#adopt" class="btn">Adopt Today</a>
+            </div>
+        </section>
+        
+                <!-- ===== Adopt a Pet ===== -->
         <section id="adopt">
             <h2>Adopt a Pet <i class="fa-solid fa-chevron-right"></i></h2>
 
@@ -180,14 +178,14 @@
                         <i class="fa-solid fa-hand-holding-heart"></i>
                         <h3>Donate to Us</h3>
                         <p>Support our mission with one-time or recurring donation.</p>
-                        <a href="">Donate Now</a>
+                        <button class="switch-btn" data-show="donation">Donate Now</button>
                     </article>
 
                     <article class="wishlist">
                         <i class="fa-solid fa-gift"></i>
                         <h3>Wishlist</h3>
                         <p>Fulfill our immediate needs by purchasing items from our wishlist.</p>
-                        <a href="">See Wishlist</a>
+                        <button class="switch-btn" data-show="wishlist">See Wishlist</button>
                     </article>
                 </div>
                 
@@ -252,6 +250,76 @@
                 </article>
             </div>
             
+        </section>
+    </main>
+
+    <!-- ==== Donation ==== -->
+    <main class="donation page" id="donation">
+        <div class="donate-img-container">
+            <img src="images/volunteer.jpg" alt="">
+            <h2>Donate Now</h2>
+        </div>
+        <div class="donate process" id="donate-process">
+            <form id="donationForm" class="donation-container">
+
+                <div class="amount-options">
+                    <div class="amount" data-value="100">₱100</div>
+                    <div class="amount" data-value="200">₱200</div>
+                    <div class="amount" data-value="500">₱500</div>
+                    <div class="amount" data-value="1000">₱1000</div>
+                    <div class="amount custom">Custom</div>
+                </div>
+
+                <input type="number" id="customAmount" name="customAmount" placeholder="Enter custom amount" disabled>
+
+                <h3>INFORMATION</h3>
+                <hr>
+
+                <aside>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" name="fullname" placeholder="Full Name">
+                </aside>
+                <aside>
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" placeholder="Email Address">
+                </aside>
+                <aside>
+                    <label for="contact">Contact Number</label>
+                    <input type="text" name="contact" placeholder="Contact Number">
+                </aside>
+                <aside>
+                    <label for="message">Message/Suggestion</label>
+                    <textarea name="message" placeholder="Message (optional)"></textarea>
+                </aside>
+                
+                <div class="donate-btn">
+                    <button class="submit" type="submit">Submit Donation</button>
+                    <button class="switch-btn back" data-show="main-content">Back</button>
+                </div>
+                
+            </form> 
+        </div>
+    </main>
+
+    <!-- ==== Wishlist ==== -->
+    <main class="wishlist page" id="wishlist">
+        <button class="switch-btn back" data-show="main-content">Back</button>
+        <section class="wish-header">
+            <h2>Our Shelter's Wishlist</h2>
+            <p>Help us provide the best care by donating these essential items.</p>
+        </section>
+        <section class="navigation">
+            <button class="filter-btn active" data-category="all">All Items</button>
+            <button class="filter-btn" data-category="food">Pet Foods</button>
+            <button class="filter-btn" data-category="bed or cages">Beds & Cages</button>
+            <button class="filter-btn" data-category="vitamins & health">Vitamins & Health</button>
+            <button class="filter-btn" data-category="toys & enrichment">Toys & Enrichment</button>
+        </section>
+        <hr>
+        <section class="wish-container">
+            <!-- Populate with Cards.
+                Include Donate Now on each cards.
+            -->
         </section>
     </main>
 

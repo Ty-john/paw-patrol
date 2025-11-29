@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "name": "Premium Dog Food",
+        "description": "High-quality dry dog food for all breeds, 10kg bag.",
+        "amount_needed": 5,
+        "img": "images/wishlistImages/prem-dog-food.png",
+        "amount_value": 2500,
+        "category": "food",
+        "priority": "high",
+        "status": "needed"
+    },
+    {
+        "id": 2,
+        "name": "Cat Scratching Post",
+        "description": "Durable scratching post with hanging toys for cats.",
+        "amount_needed": 3,
+        "img": "images/wishlistImages/cat_scratching_post.jpg",
+        "amount_value": 1500,
+        "category": "toys & enrichment",
+        "priority": "medium",
+        "status": "needed"
+    },
+    {
+        "id": 3,
+        "name": "Dog Bed",
+        "description": "Comfortable padded bed for small and medium dogs.",
+        "amount_needed": 4,
+        "img": "images/wishlistImages/dog_bed.jpg",
+        "amount_value": 1200,
+        "category": "bed or cages",
+        "priority": "medium",
+        "status": "needed"
+    },
+    {
+        "id": 4,
+        "name": "Vitamin Supplements",
+        "description": "Daily vitamins for cats and dogs, pack of 30 tablets.",
+        "amount_needed": 10,
+        "img": "images/wishlistImages/vitamins.jpg",
+        "amount_value": 500,
+        "category": "vitamins & health",
+        "priority": "high",
+        "status": "needed"
+    },
+    {
+        "id": 5,
+        "name": "Bird Cage",
+        "description": "Spacious bird cage with perches and feeding dishes.",
+        "amount_needed": 2,
+        "img": "images/wishlistImages/bird_cage.jpg",
+        "amount_value": 3500,
+        "category": "bed or cages",
+        "priority": "high",
+        "status": "needed"
+    },
+    {
+        "id": 6,
+        "name": "Dog Chew Toys",
+        "description": "Set of 5 chew toys to keep dogs active and healthy.",
+        "amount_needed": 6,
+        "img": "images/wishlistImages/dog_chew_toys.jpg",
+        "amount_value": 800,
+        "category": "toys & enrichment",
+        "priority": "medium",
+        "status": "needed"
+    },
+    {
+        "id": 7,
+        "name": "Cat Treats",
+        "description": "Delicious chicken-flavored treats for cats.",
+        "amount_needed": 8,
+        "img": "images/wishlistImages/cat_treats.jpg",
+        "amount_value": 300,
+        "category": "food",
+        "priority": "low",
+        "status": "needed"
+    },
+    {
+        "id": 8,
+        "name": "Pet First Aid Kit",
+        "description": "Complete first aid kit for pets with bandages and antiseptic.",
+        "amount_needed": 3,
+        "img": "images/wishlistImages/pet_first_aid.jpg",
+        "amount_value": 1000,
+        "category": "vitamins & health",
+        "priority": "high",
+        "status": "needed"
+    }
+]

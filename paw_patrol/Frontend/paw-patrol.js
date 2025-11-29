@@ -273,11 +273,119 @@ async function makeAdoptHomepage() {
     });
 }
 
+async function donateForm() {
+    const amounts = document.querySelectorAll('.amount');
+    const customInput = document.getElementById('customAmount');
+    let selectedAmount = null;
+
+    amounts.forEach(opt => {
+        opt.addEventListener('click', () => {
+            // Clear previous selection
+            amounts.forEach(a => a.classList.remove('selected'));
+
+            opt.classList.add('selected');
+
+            // If custom
+            if (opt.classList.contains('custom')) {
+                customInput.disabled = false;
+                customInput.focus();
+                selectedAmount = null;
+            } else {
+                customInput.value = "";
+                customInput.disabled = true;
+                selectedAmount = opt.dataset.value;
+            }
+        });
+    });
+}
+
+// Switch between Main Sections 
+// (di na ako nag create ng separate html file, hide nalang yung Main)
+document.addEventListener('DOMContentLoaded', () => {
+    const switchBtns = document.querySelectorAll(".switch-btn");
+    const pages = document.querySelectorAll(".page");
+
+    switchBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const targetID = btn.dataset.show;
+            const targetPage = document.getElementById(targetID);
+
+            // Hide all pages
+            pages.forEach(page => page.classList.remove("active"));
+
+            // Show target page
+            targetPage.classList.add("active");
+
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    });
+});
+
+
+// Populate Wishlist Cards
+function wishlistCards(items) {
+    const container = document.querySelector('.wish-container');
+    container.innerHTML = ''; // Clear previous cards
+
+    items.forEach(item => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        card.innerHTML = `
+            <img src="${item.img}" alt="${item.name}">
+            <span class="price">₱${item.amount_value}</span>
+            <div class="card-content">
+                <h3>${item.name}</h3>
+                <p class="desc">${item.description}</p>
+                <p class="amount">Amount Needed: ${item.amount_needed}</p>
+                <p class="priority">Priority: ${item.priority}</p>
+                <button onclick="donateItem(${item.id})">Donate Now</button>
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+async function initWishlist() {
+    try {
+        const wishlist = await loadJSON('pets-wishlist.json'); // Path to your JSON file
+
+        // Initial render (all items)
+        wishlistCards(wishlist);
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+
+                document.querySelectorAll('.filter-btn').forEach(b => 
+                    b.classList.remove('active')
+                );
+
+                btn.classList.add('active');
+
+                if (category === 'all') {
+                    wishlistCards(wishlist);
+                } else {
+                    const filtered = wishlist.filter(item => item.category === category);
+                    wishlistCards(filtered);
+                }
+            });
+        });
+    } catch (err) {
+        console.error('Error loading wishlist:', err);
+    }
+}
+
 // Populate adopt cards when the DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     makeAdoptHomepage();
     makeGallery();
     makeNewsHomepage();
+    donateForm();
+    initWishlist();
 });
 
 //petcare TIPS
