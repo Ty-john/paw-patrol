@@ -67,7 +67,7 @@
             <h2>Adopt a Pet <i class="fa-solid fa-chevron-right"></i></h2>
 
             <div class="container-adopt-card" id="container-adopt-card">
-                
+                <!-- Populate in JS -->
             </div>
 
             <div class="adopt-buttons">
@@ -217,7 +217,7 @@
         <section id="care">
             <h2>Pet Care Tips <i class="fa-solid fa-chevron-right"></i></h2>
             <div class="care-tips-container">
-                <article class="training">
+                <article class="training" onclick="openCareOverlay('training')">
                     <aside class="care-img-container">
                         <img src="images/pet-training.jpg" alt="">
                     </aside>
@@ -225,7 +225,7 @@
                     <h3>Training Tips</h3>
                 </article>
 
-                <article class="health">
+                <article class="health" onclick="openCareOverlay('health')">
                     <aside class="care-img-container">
                         <img src="images/pet-nutrition.jpg" alt="">
                     </aside>
@@ -233,7 +233,7 @@
                     <h3>Health & Nutrition</h3>
                 </article>
 
-                <article class="grooming">
+                <article class="grooming" onclick="openCareOverlay('grooming')">
                     <aside class="care-img-container">
                         <img src="images/pet-grooming.jpg" alt="">
                     </aside>
@@ -241,7 +241,7 @@
                     <h3>Grooming Tips</h3>
                 </article>
 
-                <article class="emergency">
+                <article class="emergency" onclick="openCareOverlay('emergency')">
                     <aside class="care-img-container">
                         <img src="images/pet-emegency-care.jpg" alt="">
                     </aside>
@@ -303,7 +303,7 @@
 
     <!-- ==== Wishlist ==== -->
     <main class="wishlist page" id="wishlist">
-        <button class="switch-btn back" data-show="main-content">Back</button>
+        <button class="switch-btn back" data-show="main-content">Return to homepage</button>
         <section class="wish-header">
             <h2>Our Shelter's Wishlist</h2>
             <p>Help us provide the best care by donating these essential items.</p>
@@ -323,22 +323,24 @@
 
     <!-- ==== Event/Fundraiser ==== -->
     <main class="event page" id="event">
-       <section class="event-header">
-            <h2>Events</h2>
-            <p>Join and be part of our events and fundraisers. No signup and application needed, just show-up.</p>
-       </section>
-       <section class="nav">
-            <button class="event-filter-btn active" data-category="all">All</button>
-            <button class="event-filter-btn" data-category="upcoming">
-                Upcoming <span class="count upcoming-count"></span>
-            </button>
-            <button class="event-filter-btn" data-category="past">
-                Past <span class="count past-count"></span>
-            </button>
-       </section>
-       <section class="event-container">
-            <!-- Populate with cards -->
-       </section>
+        <button class="switch-btn back" data-show="main-content">Return to homepage</button>
+        <section class="event-header">
+                <h2>Events</h2>
+                <p>Be part of our mission—join our events and fundraisers. No sign-up needed, just come and lend your support!</p>
+        </section>
+        
+        <section class="nav">
+                <button class="event-filter-btn active" data-category="all">All</button>
+                <button class="event-filter-btn" data-category="upcoming">
+                    Upcoming <span class="count upcoming-count"></span>
+                </button>
+                <button class="event-filter-btn" data-category="past">
+                    Past <span class="count past-count"></span>
+                </button>
+        </section>
+        <section class="event-container">
+                <!-- Populate with cards -->
+        </section>
     </main> 
 
 
@@ -417,6 +419,16 @@
             </div>
         </section>
     </footer>
+
+    <!-- ===== OVERLAYS ==== -->
+     <!-- ===== Care Tip Full Details Overlay ===== -->
+    <div id="careOverlay" class="overlay">
+        <div class="overlay-content">
+            <button class="close-overlay">&times;</button>
+            <h2 id="overlayTitle"></h2>
+            <div id="overlayText"></div>
+        </div>
+    </div>
 
     <script src="paw-patrol.js"></script>
 </body>

@@ -449,6 +449,65 @@ async function initEvent() {
     });
 }
 
+// Open Overlay
+async function openCareOverlay(type) {
+    const careDetails = await loadJSON('pets-careDetails.json');
+    const overlay = document.getElementById("careOverlay");
+    const title = document.getElementById("overlayTitle");
+    const textBox = document.getElementById("overlayText");
+
+    const data = careDetails[type];
+    title.textContent = data.title;
+
+    textBox.innerHTML = ""; // Reset
+
+    const content = data.content;
+
+    // Build collapsible sections
+    for (const pet in content) {
+        const section = content[pet];
+
+        const block = document.createElement("div");
+        block.classList.add("pet-section");
+
+        block.innerHTML = `
+            <div class="pet-header">
+                <h3>${pet.charAt(0).toUpperCase() + pet.slice(1)}</h3>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+
+            <div class="pet-summary">
+                <p>${section.summary}</p>
+            </div>
+
+            <ul class="pet-tips">
+                ${section.tips.map(t => `<li>${t}</li>`).join("")}
+            </ul>
+        `;
+
+        // collapse functionality
+        const header = block.querySelector(".pet-header");
+        const arrow = block.querySelector("i");
+        const tipsBox = block.querySelector(".pet-tips");
+
+        tipsBox.style.display = "none";
+
+        header.addEventListener("click", () => {
+            const isOpen = tipsBox.style.display === "block";
+            tipsBox.style.display = isOpen ? "none" : "block";
+            arrow.classList.toggle("rotate");
+        });
+
+        textBox.appendChild(block);
+    }
+
+    overlay.style.display = "flex";
+}
+// Close Overlay
+document.querySelector(".close-overlay").addEventListener("click", () => {
+    document.getElementById("careOverlay").style.display = "none";
+});
+
 
 // Populate adopt cards when the DOM is ready
 document.addEventListener('DOMContentLoaded', () => {

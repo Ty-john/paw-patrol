@@ -1,0 +1,168 @@
+{
+  "training": {
+    "title": "Training Tips",
+    "content": {
+      "dogs": {
+        "summary": "Build obedience, strengthen communication, and develop good everyday habits.",
+        "tips": [
+          "Start with foundational commands: sit, stay, come, leave it, down.",
+          "Use treats, verbal praise, and toys as positive reinforcement.",
+          "Train in short 5–10 minute sessions to avoid overstimulation.",
+          "Gradually introduce distractions to strengthen discipline."
+        ]
+      },
+      "cats": {
+        "summary": "Training cats improves behavior, reduces stress, and strengthens trust.",
+        "tips": [
+          "Use clicker training to reward correct behaviors.",
+          "Teach simple commands like come, high-five, and sit.",
+          "Avoid punishment — it increases anxiety and makes training harder.",
+          "Encourage play-based learning using feather wands or treats."
+        ]
+      },
+      "birds": {
+        "summary": "Teaching birds commands improves communication and reduces stress.",
+        "tips": [
+          "Train essential commands: step up, step down, stay.",
+          "Use millet or fruit bits as rewards.",
+          "Keep sessions short and frequent — birds respond best this way.",
+          "Avoid sudden noises; always train in a calm environment."
+        ]
+      },
+      "others": {
+        "summary": "Small pets like rabbits, hamsters, or guinea pigs can learn simple behaviors.",
+        "tips": [
+          "Train them to come when called using vegetable treats.",
+          "Use gentle repetition instead of pressure.",
+          "Never force handling — let them approach at their own pace."
+        ]
+      }
+    }
+  },
+
+  "health": {
+    "title": "Health & Nutrition",
+    "content": {
+      "dogs": {
+        "summary": "Proper nutrition and regular vet visits keep dogs energetic and healthy.",
+        "tips": [
+          "Feed well-balanced meals with high-quality protein.",
+          "Avoid toxic foods like chocolate, grapes, garlic, and xylitol.",
+          "Schedule yearly health exams and vaccinations.",
+          "Monitor dental health — plaque buildup affects major organs."
+        ]
+      },
+      "cats": {
+        "summary": "Nutrition plays a big role in preventing common illnesses in cats.",
+        "tips": [
+          "Provide meals rich in taurine, essential for heart and vision health.",
+          "Ensure daily hydration, especially for cats that dislike water.",
+          "Avoid overfeeding — obesity is common in indoor cats.",
+          "Use slow feeders to improve digestion and reduce choking risks."
+        ]
+      },
+      "birds": {
+        "summary": "Proper diet reduces feather plucking and improves overall wellbeing.",
+        "tips": [
+          "Balance seeds with pellets, fruits, and leafy vegetables.",
+          "Avoid chocolate, avocado, alcohol, and caffeine — all toxic to birds.",
+          "Provide cuttlebone or mineral blocks for beak and bone health.",
+          "Ensure proper cage ventilation to prevent respiratory issues."
+        ]
+      },
+      "others": {
+        "summary": "Small pets require specific diets to stay healthy and active.",
+        "tips": [
+          "Rabbits need 80% hay to maintain digestive and dental health.",
+          "Avoid iceberg lettuce as it offers no nutrients.",
+          "Guinea pigs need daily vitamin C; provide bell peppers or supplements.",
+          "Clean water bottles daily to prevent bacteria buildup."
+        ]
+      }
+    }
+  },
+
+  "grooming": {
+    "title": "Grooming Tips",
+    "content": {
+      "dogs": {
+        "summary": "Regular grooming prevents skin issues and keeps dogs comfortable.",
+        "tips": [
+          "Brush weekly; daily for long-haired breeds.",
+          "Trim nails every 3–4 weeks to prevent injuries.",
+          "Bathe every 4–6 weeks unless medically required more often.",
+          "Check ears weekly for odor or redness."
+        ]
+      },
+      "cats": {
+        "summary": "Grooming helps reduce shedding and hairballs.",
+        "tips": [
+          "Brush long-haired cats daily to prevent mats.",
+          "Use cat-safe grooming wipes between sessions.",
+          "Trim claws every 2–3 weeks.",
+          "Check their fur for fleas, especially if they go outdoors."
+        ]
+      },
+      "birds": {
+        "summary": "Good grooming keeps feathers healthy and prevents stress.",
+        "tips": [
+          "Offer shallow baths or mist with warm water 2–3 times weekly.",
+          "Never trim wing feathers without proper guidance.",
+          "Place natural wood perches for safe nail filing.",
+          "Ensure feathers are fully dry before sleep."
+        ]
+      },
+      "others": {
+        "summary": "Grooming needs differ widely among small animals.",
+        "tips": [
+          "Never bathe rabbits — it causes shock; use brushing instead.",
+          "Trim guinea pigs’ nails monthly.",
+          "Hamsters self-groom; only spot-clean with sand baths.",
+          "Regularly check fur for mites or skin irritation."
+        ]
+      }
+    }
+  },
+
+  "emergency": {
+    "title": "Emergency Care",
+    "content": {
+      "dogs": {
+        "summary": "Recognizing early signs of emergency saves lives.",
+        "tips": [
+          "Learn pet CPR and choking procedures.",
+          "Watch for collapse, pale gums, seizures, or overheating.",
+          "Carry a basic first-aid kit during travel.",
+          "If poisoned, never induce vomiting unless a vet instructs."
+        ]
+      },
+      "cats": {
+        "summary": "Cats hide symptoms, so early detection is critical.",
+        "tips": [
+          "Seek urgent care for difficulty breathing, sudden paralysis, or nonstop vomiting.",
+          "Monitor for urinary blockage — common in male cats and life-threatening.",
+          "Store toxic plants (lilies, aloe, sago palm) out of reach.",
+          "Know the nearest 24/7 vet clinic."
+        ]
+      },
+      "birds": {
+        "summary": "Birds deteriorate quickly; act fast during emergencies.",
+        "tips": [
+          "Signs of danger: tail bobbing, refusal to perch, or fluffed feathers all day.",
+          "Keep the bird warm and quiet while transporting to a vet.",
+          "Avoid restraining birds tightly — it restricts breathing.",
+          "Prepare a hospital cage for emergencies."
+        ]
+      },
+      "others": {
+        "summary": "Small pets are fragile, so quick response matters.",
+        "tips": [
+          "Rabbits not eating for 12 hours require immediate vet attention.",
+          "Keep styptic powder for nail bleeding.",
+          "Provide a warm, quiet environment during recovery.",
+          "Store emergency numbers on your phone for quick access."
+        ]
+      }
+    }
+  }
+}

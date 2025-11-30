@@ -641,6 +641,8 @@ section#help div.involved-container div.help-actions article {
     display: flex;
     position: relative;
     margin-bottom: 10px;
+    padding: 0;
+    
 }
 section#help div.involved-container div.help-actions article aside.volunteer-img-container {
     width: 100%;
@@ -664,7 +666,6 @@ div.involved-container div.help-actions article aside.volunteer-img-container im
 section#help div.involved-container div.help-actions article aside.volunteer-form {
     position: absolute;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
@@ -685,6 +686,7 @@ section#help div.involved-container div.help-actions article aside.volunteer-for
     border-radius: 50px;
     font-size: 14px;
     background: none;
+    cursor: pointer;
 }
     section#help div.involved-container div.help-actions article aside.volunteer-form a:hover,
     section#help div.involved-container div.help-actions article aside.volunteer-form button:hover {
@@ -728,6 +730,8 @@ section#care div.care-tips-container article {
     height: auto; /* let article size to its content (image + heading) */
     margin-bottom: 10px;
     position: relative;
+    padding: 0;
+    cursor: pointer;
 }
 div.care-tips-container article h3 {
     color: white;
@@ -746,7 +750,7 @@ div.care-tips-container article i.fa-chevron-up {
     left: 50%;
     transform: translateX(-50%);
     transition: transform 0.3s ease-in-out;
-    bottom: 43px;
+    bottom: 9%;
     background-color: #7C3AED;
     color: white;
     width: 36px;
@@ -756,6 +760,7 @@ div.care-tips-container article i.fa-chevron-up {
     justify-content: center;
     border-radius: 15px;
     padding: 0;
+    z-index: 1;
 }
 
     section#care div.care-tips-container article:hover i.fa-chevron-up {
@@ -2194,19 +2199,20 @@ div.process form.donation-container button {
 */
 main.wishlist {
     padding: 60px 20px;
-    text-align: center;
     position: relative;
 }
-main.wishlist button.back {
-    position: absolute;
+main.wishlist button.back { /* Back Button */
+    position: sticky;
     top: 100px;
-    left: 10%;
-    background: none;
+    background-color: #F3E8FF;
+    padding: 10px;
+    border-radius: 50px;
     border: none;
     color: #5B21B6;
     font-weight: 600;
     font-size: 16px;
     cursor: pointer;
+    z-index: 1;
 }
 main.wishlist hr {
     width: 88%;
@@ -2311,7 +2317,25 @@ section.wish-container div.card:hover button {
         EVENT SECTION
     */
 main.event {
-    width: 80%;
+    width: 85%;
+    margin: 0 auto 30px auto;
+}
+main.event button.back { /* Back Button */
+    position: sticky;
+    top: 95px;
+    background-color: #F3E8FF;
+    padding: 10px;
+    border-radius: 0 50px 50px 0;
+    border: none;
+    color: #5B21B6;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1;
+}
+main.event section.event-header {
+    padding-bottom: 10px;
+    width: 90%;
     margin: 0 auto 30px auto;
 }
     /* event buttons */
@@ -2319,17 +2343,20 @@ main.event section.nav {
     padding: 0;
     display: flex;
     align-items: left;
-    margin-bottom: 30px;
+    width: 90%;
+    margin: 0 auto 30px auto;
     gap: 10px;
 }
 section.nav button {
     min-width: 80px;
     padding: 8px 20px;
-    border: 1px solid #7C3AED;
+    border: 2px solid #7C3AED;
     border-radius: 50px;
-    color: #4C1D95;
+    color: #7C3AED;
+    font-weight: 550;
     background: none;
     transition: 0.2s ease-in-out;
+    cursor: pointer;
 }
     section.nav button.active,
     section.nav button:hover {
@@ -2343,9 +2370,11 @@ main.event section.event-container {
     flex-wrap: wrap;
     gap: 20px;
     padding: 0;
+    width: 90%;
+    margin: 0 auto;
 }
 main.event section.event-container div.card {
-    width: 375px;
+    width: 360px;
     text-align: left;
     transition: transform 0.3s ease-in-out;
 }
@@ -2708,3 +2737,90 @@ main.event section.event-container div.card div.card-content p.place {
     display: block;
     object-fit: cover; /* This makes the image cover the container without stretching */
 }
+
+/* ===== CARE TIPS OVERLAYS ====== */
+/* Overlay style */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.overlay-content {
+    width: 80%;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    animation: pop 0.25s ease-out;
+}
+
+@keyframes pop {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Close button */
+.close-overlay {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    float: right;
+    color: #8B5CF6;
+}
+
+/* Pet Sections */
+.pet-section {
+    background: #F8F5FF;
+    border: 2px solid #E5D9FF;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.pet-header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.pet-header h3 {
+    font-size: 20px;
+    color: #5B21B6;
+}
+
+.pet-header i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+    color: #5B21B6;
+}
+
+.pet-header i.rotate {
+    transform: rotateX(180deg);
+}
+
+.pet-summary {
+    padding: 8px 0;
+    color: #4B5563;
+}
+
+/* Tips list */
+.pet-tips {
+    margin-top: 10px;
+    padding-left: 20px;
+    color: #374151;
+}
+
+.pet-tips li {
+    margin-bottom: 8px;
+}
+
