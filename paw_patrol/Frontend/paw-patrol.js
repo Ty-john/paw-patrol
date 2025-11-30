@@ -180,41 +180,58 @@ async function makeGallery() {
 
 // Populate News & Blog
 
+// In paw-patrol.js (Replace the current incomplete newsList array)
+
 const newsList = [
     {
         "headline": "Meet Our Newly Rescued Pets",
-        "story": "Discover the latest animals who have joined our care—each with a unique story and ready for a fresh start"
+        "story": "Discover the latest animals who have joined our care—each with a unique story and ready for a fresh start",
+        "image": "" // 👈 Add your image path
     },
     {
         "headline": "Tips for First-Time Pet Adopters",
-        "story": "Thinking about adopting your first pet? Here are simple, essential tips to help you prepare"
+        "story": "Thinking about adopting your first pet? Here are simple, essential tips to help you prepare",
+        "image": "images/news-tips.jpg" // 👈 Add your image path
     },
     {
         "headline": "Community Adoption Drive Success",
-        "story": "Our recent adoption event brought together families, volunteers, and pets in need"
+        "story": "Our recent adoption event brought together families, volunteers, and pets in need",
+        "image": "images/news-drive-success.jpg" // 👈 Add your image path
     },
     {
         "headline": "How We Rehabilitate Rescued Animals",
-        "story": "Go behind the scenes and see how our team provides medical care and emotional support"
+        "story": "Go behind the scenes and see how our team provides medical care and emotional support",
+        "image": "images/news-rehab-process.jpg" // 👈 Add your image path
     }
 ];
 
-async function makeNewsHomepage() {
-    const newsContainer = document.getElementById('news-container');
-    if (!newsContainer) return; // Exit if element doesn't exist
+// In paw-patrol.js (Replace the existing function)
 
-    newsList.forEach(news => {
+function makeNewsHomepage() {
+    const newsContainer = document.getElementById('news-container');
+    if (!newsContainer) return;
+
+    newsContainer.innerHTML = ""; // Clear first if reloading
+
+    newsList.forEach((news, index) => {
         const newsCard = document.createElement('article');
         newsCard.classList.add('news-card');
 
+        const detailUrl = `news.html?id=${index}`; 
+
+        // 🚨 CRITICAL FIX: Removed the <div class="news-img-container">...</div>
+        // The remaining text-content div now holds the entire card's content.
         newsCard.innerHTML = `
-            <h4>${news.headline}</h4>
-            <p>${news.story}</p>
-            <a href="">Read More</a>
+            <div class="news-text-content">
+                <h4>${news.headline}</h4>
+                <p>${news.story}</p>
+                <a href="${detailUrl}" class="read-more-link">Read More</a> 
+            </div>
         `;
         newsContainer.appendChild(newsCard);
     });
 }
+document.addEventListener('DOMContentLoaded', makeNewsHomepage);
 
 
 // Populate Adopt Cards for Homepage

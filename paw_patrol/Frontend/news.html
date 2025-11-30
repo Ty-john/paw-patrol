@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>News Story</title>
+<style>
+    /* --- News Card Grid Container --- */
+section#about div.bottom-about aside.news-blog div.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Space them out again */
+    gap: 20px; /* Space between cards */
+    position: relative;
+    padding: 10px 0;
+}
+
+/* --- Individual News Card Styling (Reverting to Text-Focus) --- */
+div.bottom-about aside.news-blog div.news-container article.news-card {
+    /* New, larger, more flexible dimensions for text content */
+    width: 48%; /* Allows two cards per row with space in between */
+    min-height: 150px; 
+    
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    
+    /* Reverting to your preferred color */
+    background-color: #e2c7ff; 
+    
+    /* Box shadow and hover effect for professional look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Remove the Adopt Card hover scale effect to focus on text */
+div.bottom-about aside.news-blog div.news-container article.news-card:hover {
+    transform: translateY(-5px); /* Simple lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    border: none; /* Ensure no border override */
+}
+
+/* --- Inner Content Styling --- */
+div.bottom-about aside.news-blog div.news-container article.news-card div.news-text-content {
+    /* Ensure the text wrapper takes up all space */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+div.bottom-about aside.news-blog div.news-container article.news-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    color: #4C1D95; 
+}
+
+div.bottom-about aside.news-blog div.news-container article.news-card p {
+    font-size: 0.95rem;
+    flex-grow: 1; /* Pushes the Read More link to the bottom */
+    margin-bottom: 10px;
+}
+
+/* --- Read More Link Styling --- */
+div.bottom-about aside.news-blog div.news-container article.news-card a.read-more-link {
+    display: inline-block;
+    width: auto;
+    margin-top: 10px;
+    
+    /* Match button style */
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 2px solid #7C3AED;
+    color: #7C3AED;
+    background-color: transparent;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+div.bottom-about aside.news-blog div.news-container article.news-card a.read-more-link:hover {
+    background-color: #7C3AED;
+    color: white;
+}
+
+/* 🚨 Remove all image-specific CSS rules: */
+/* Remove styles for .news-img-container and .news-img-container img */
+</style>
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <a href="homepage.html" class="logo-link">
+        <aside class="logo-container">
+            <div class="logo-img-container">
+                <img src="./images/logo1.png" alt="">
+            </div>
+            <h3>Paw Patrol</h3>
+        </aside>
+        </a>
+  
+        <nav class="navigation" id="nav-menu">
+            <a href="homepage.html">Home</a>
+            <a href="homepage.html#adopt">Adopt</a>
+            <a href="homepage.html#about">About Us</a>
+            <a href="homepage.html#help">Get Involved</a>
+            <a href="homepage.html#care">Petcare Tips</a>
+        </nav>
+        
+         <div class="small-screen-menu" id="small-screen-menu">
+            <a href="homepage.html">Home</a>
+            <a href="homepage.html#adopt">Adopt</a>
+            <a href="homepage.html#about">About Us</a>
+            <a href="homepage.html#help">Get Involved</a>
+            <a href="homepage.html#care">Petcare Tips</a>
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+<a href="index.html#news-container" class="back-btn">← Back</a>
+
+<div id="news-page" class="news-page-card"></div>
+
+<main class="news-detail-main">
+    
+    <a href="homepage.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to News Overview</a>
+
+    <section id="news-page">
+        
+        <div class="article-image-container">
+            <img id="detail-image" src="images/newsBlogs/famPets.jpg" alt="Featured News Image">
+            <img id="detail-image" src="images/newsBlogs/res.jpg" alt="Featured News Image">
+            <img id="detail-image" src="images/newsBlogs/petVet.jpg" alt="Featured News Image">
+            <img id="detail-image" src="images/newsBlogs/TT.jpg" alt="Featured News Image">
+        </div>
+        
+        <h1 id="detail-headline"></h1> 
+
+        <p id="detail-subtitle"></p>
+        
+        <hr>
+        
+        <div id="article-content-body">
+            </div>
+
+    </section>
+    
+</main>
+
+ <!-- ========== FOOTER ========== -->
+    <footer>
+        <section class="upper-footer">
+            <div class="footer-logo-container" id="footer-logo-container">
+                <div class="footer-img-container">
+                    <img src="./images/logo2.1.png" alt="">
+                </div>
+                <h3 style="font-family: 'LEMON'; font-size: 24px;">Paw Patrol</h3>
+            </div>
+            
+            <div class="footer-info-container" id="footer-info-container">
+                <article>
+                    <aside>
+                        <h4>RESOURCES <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">FAQs</a>
+                        <a href="">Partnerships</a>
+                        <a href="">Contact Us</a>
+                    </aside>
+                    <aside>
+                        <h4>GET INVOLVED <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">Get Involve</a>
+                        <a href="">Adopting Pets</a>
+                        <a href="">Animal Shelters & Rescues</a>
+                        <a href="">Other Types of Pets</a>
+                    </aside>
+                    <aside>
+                        <h4>ABOUT DOGS & PUPPIES <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">All About Dogs</a>
+                        <a href="">Dog Adoption</a>
+                        <a href="">Dog Feeding</a>
+                        <a href="">Dog Health & Wellness</a>
+                        <a href="">Dog Training</a>
+                        <a href="">Other Dog Pet Information</a>
+                    </aside>
+                    <aside>
+                        <h4>ABOUT CATS & KITTENS <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">All About Cats</a>
+                        <a href="">Cat Adoption</a>
+                        <a href="">Cat Feeds</a>
+                        <a href="">Cat Health & Wellness</a>
+                        <a href="">Cat Training</a>
+                        <a href="">Other Cat Information</a>
+                    </aside>
+                </article>
+                
+                <aside class="footer-sign-up">
+                    <p>To get the latest on pet adoption and pet care, sign up for the Paw Patrol newsletter.</p>
+                    <a href="" class="sign-up-btn">Sign Up</a>
+                </aside>
+            </div>
+
+            <div class="legal-info">
+                <a href="">Shelter & Rescue Registration</a>
+                <a href="">Terms of Service</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Cookie Policy</a>
+                <a href="">Accesibility</a>
+            </div>
+        </section>
+
+        <section class="lower-footer">
+            <div>
+                <p>
+                    <span>&copy;2025 Paw Patrol.netlify.app</span>   
+                    <span>All trademarks are owned by Tomioka-san, or used with permission.</span>
+                </p>
+                <aside>
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </aside>
+            </div>
+        </section>
+    </footer>
+
+<script>
+// 🚨 IMPORTANT: This newsList MUST exactly match the one in paw-patrol.js
+// In news.html, replace the entire newsList array inside the <script> tags
+
+const newsList = [
+    {
+        "headline": "Meet Our Newly Rescued Pets",
+        "story": "Discover the latest animals who have joined our care—each with a unique story and ready for a fresh start",
+        "image": "images/newsBlogs/res.jpg", 
+        "fullContent": `
+            <p class="article-meta"><i class="fa-regular fa-calendar"></i> November 28, 2025 | <i class="fa-regular fa-user"></i> By Sarah Martinez, Shelter Manager</p>
+            
+            <p class="article-intro">
+                Every month, dozens of animals arrive at our shelter doors—some abandoned, others surrendered by families facing difficult circumstances, and many rescued from unsafe situations. This month has been particularly special, as we've welcomed some truly remarkable animals who have already captured our hearts. Today, I want to introduce you to three of them: Barnaby, and the inseparable Shadow Squad.
+            </p>
+            
+            <h4><i class="fa-solid fa-paw"></i> Barnaby's Journey: From Fear to Trust</h4>
+            
+            <p>
+                When Barnaby first arrived at our shelter three weeks ago, he wouldn't even look us in the eye. This sweet Beagle mix was found wandering alone near Rizal Park, visibly malnourished and covered in matted fur. A concerned jogger spotted him limping along the pathway and immediately contacted our rescue hotline.
+            </p>
+            
+            <p>
+                Our veterinary team estimates Barnaby is about 4 years old, though his rough past has left him looking older. During his initial health check, we discovered he was severely underweight at just 18 pounds (he should be closer to 28), had untreated ear infections, and showed signs of chronic stress. But the most heartbreaking part? He flinched every time we reached out to pet him.
+            </p>
+            
+            <div class="info-box">
+                <h5><i class="fa-solid fa-heart-pulse"></i> Barnaby's Recovery Progress</h5>
+                <ul>
+                    <li><strong>Week 1:</strong> Focused on medical care, gained 2 pounds, started medication</li>
+                    <li><strong>Week 2:</strong> First tail wag recorded! Beginning to accept gentle touches</li>
+                    <li><strong>Week 3:</strong> Actively seeking attention, playing with toys, gaining confidence daily</li>
+                </ul>
+            </div>
+            
+            <p>
+                Our behavior specialist, Dr. Elena Rodriguez, has been working one-on-one with Barnaby using positive reinforcement techniques. "Barnaby is a textbook case of learned fear," she explains. "He's never been abused in the traditional sense, but he's clearly never experienced consistent kindness or stability. Every small breakthrough—like the first time he took a treat from my hand—is a victory."
+            </p>
+            
+            <p>
+                Today, Barnaby is a completely different dog. He greets volunteers with a wiggling bottom and soft eyes. He's learned to sit, shake, and even play gentle tug-of-war. His favorite activity? Curling up in a sunny spot in our quiet room for afternoon naps. We're looking for a patient adopter who understands that trust takes time, but the reward is immeasurable.
+            </p>
+            
+            <h4><i class="fa-solid fa-paw"></i> The Shadow Squad: Three Kittens, One Unbreakable Bond</h4>
+            
+            <p>
+                If Barnaby's story tugs at your heartstrings, the Shadow Squad will make them sing. These three black kittens—Ninja, Ghost, and Shadow—were discovered in a cardboard box outside a convenience store in Quezon City. They were only 6 weeks old, huddled together for warmth during a rainstorm.
+            </p>
+            
+            <p>
+                Unlike Barnaby, these little ones haven't known hardship for long enough to let it define them. At 10 weeks old now, they're bundles of pure chaotic energy. Ninja, the ringleader, is always the first to investigate new toys (or pounce on unsuspecting ankles). Ghost, the smallest, has the loudest purr you've ever heard. And Shadow, despite his name, is actually the bravest—he'll walk right up to strangers demanding attention.
+            </p>
+            
+            <div class="info-box">
+                <h5><i class="fa-solid fa-syringe"></i> The Shadow Squad's Health Status</h5>
+                <p>
+                    All three kittens have received their first round of vaccinations, have been dewormed, and tested negative for FIV and FeLV. They'll be ready for adoption once they're spayed/neutered at 12 weeks old (approximately 2 weeks from now). We're requiring they be adopted together—their bond is simply too strong to separate.
+                </p>
+            </div>
+            
+            <p>
+                "Bonded siblings are incredibly special," says our lead adoption counselor, Mark Santos. "They provide companionship for each other, which actually makes them easier to care for. They'll play together, groom each other, and generally entertain themselves. For adopters, it means you get triple the love without triple the work."
+            </p>
+            
+            <p>
+                The Shadow Squad needs a home with plenty of vertical space—cat trees, shelves, and window perches are essential for these climbing enthusiasts. They'd do best in a household without very young children, as they're still learning to retract their claws during play. A home with at least one experienced cat owner would be ideal.
+            </p>
+            
+            <h4><i class="fa-solid fa-lightbulb"></i> What Makes These Pets Special?</h4>
+            
+            <p>
+                You might wonder why I'm spotlighting these four animals specifically. We have over 60 dogs and 40 cats currently in our care, and every single one deserves a loving home. But Barnaby and the Shadow Squad represent something important: resilience.
+            </p>
+            
+            <p>
+                Barnaby shows us that even the most fearful animals can learn to trust again with patience and consistency. The Shadow Squad reminds us that many shelter animals are there through no fault of their own—they're healthy, social, and ready to love. They just need someone to give them a chance.
+            </p>
+            
+            <blockquote class="article-quote">
+                <i class="fa-solid fa-quote-left"></i>
+                "We often say that rescue animals are damaged goods, but I see it differently. They're diamonds in the rough—they've been through fire and come out stronger. The love they give is deeper because they know what it's like to be without it."
+                <span class="quote-author">— Dr. Elena Rodriguez, Animal Behavior Specialist</span>
+            </blockquote>
+            
+            <h4><i class="fa-solid fa-clipboard-check"></i> Ready to Meet Them?</h4>
+            
+            <p>
+                Both Barnaby and the Shadow Squad are available for meet-and-greets starting this weekend. If you're interested in adoption, here's what the process looks like:
+            </p>
+            
+            <ol class="numbered-list">
+                <li><strong>Submit an application:</strong> Tell us about your home, lifestyle, and experience with pets</li>
+                <li><strong>Schedule a meet-and-greet:</strong> Spend time with the animal(s) to ensure compatibility</li>
+                <li><strong>Home check:</strong> We'll visit your home to ensure it's safe and suitable</li>
+                <li><strong>Adoption day:</strong> Sign paperwork, pay adoption fee, and take your new family member home!</li>
+            </ol>
+            
+            <p>
+                Adoption fees are ₱3,500 for dogs (includes spay/neuter, vaccinations, microchip) and ₱2,500 for cats (same inclusions). These fees help us continue rescuing more animals in need.
+            </p>
+            
+            <div class="article-cta">
+                <h5>Interested in Adopting?</h5>
+                <p>Don't wait—these pets won't be available for long! Contact us today to start your adoption journey.</p>
+                <a href="homepage.html#adopt" class="cta-button">View All Adoptable Pets</a>
+                <a href="adoptionProcess.html" class="cta-button secondary">Learn About Adoption Process</a>
+            </div>
+            
+            <div class="article-footer">
+                <p><strong>About the Author:</strong> Sarah Martinez has been Paw Patrol's Shelter Manager for 6 years. She oversees daily operations, intake processes, and adoption matchmaking. When she's not at the shelter, she's at home with her three rescue dogs and two cats.</p>
+            </div>
+        `
+    },
+    {
+        "headline": "Tips for First-Time Pet Adopters",
+        "story": "Thinking about adopting your first pet? Here are simple, essential tips to help you prepare",
+        "image": "images/newsBlogs/TT.jpg", 
+        "fullContent": `
+            <h2>Your Guide to First-Time Pet Adoption Success</h2>
+            <p class="article-sub"><em>By Mark Santos, Lead Adoption Counselor | <i class="fa-regular fa-calendar"></i> December 5, 2025</em></p>
+            <hr>
+            
+            <p class="article-intro">
+                Bringing a new dog or cat home is an exciting milestone! But the first few weeks are crucial. To ensure a smooth transition for both you and your newly adopted family member, preparation is key. Here are Paw Patrol’s essential tips to make your adoption a success.
+            </p>
+            
+            <h4><i class="fa-solid fa-house-chimney"></i> Create a Safe Sanctuary (The 'Decompression Zone')</h4>
+            
+            <p>
+                The shelter environment is noisy and stressful. When your pet arrives, they will be overwhelmed. Instead of giving them immediate access to the entire house, designate a small, quiet, secure area—like a guest room, office, or large crate—as their "safe room" or decompression zone.
+            </p>
+            
+            <div class="info-box">
+                <h5><i class="fa-solid fa-bolt"></i> Important Decompression Rules</h5>
+                <ul>
+                    <li><strong>No Visitors:</strong> Restrict visitors for the first week.</li>
+                    <li><strong>Quiet Time:</strong> Minimize loud noises and excitement.</li>
+                    <li><strong>Routine:</strong> Feed and walk at the same times every day to build trust.</li>
+                </ul>
+            </div>
+            
+            <h4><i class="fa-solid fa-shield-dog"></i> The Critical First Week Rule (The 3-3-3 Rule)</h4>
+            
+            <p>
+                Pet behaviorists often use the 3-3-3 rule to describe the adjustment period for rescue animals. This helps set realistic expectations for new owners:
+            </p>
+            
+            <ol class="numbered-list">
+                <li><strong>3 Days:</strong> They feel overwhelmed, scared, and might not eat or drink.</li>
+                <li><strong>3 Weeks:</strong> They start to settle in, the true personality begins to show, and they learn the routine.</li>
+                <li><strong>3 Months:</strong> They are fully comfortable, bonded, and feel completely at home.</li>
+            </ol>
+            
+            <blockquote class="article-quote">
+                <i class="fa-solid fa-quote-left"></i>
+                "Patience isn't just a virtue when adopting a pet; it's a requirement. Give them space, respect their boundaries, and you’ll find the relationship blossoms naturally."
+                <span class="quote-author">— Mark Santos, Lead Adoption Counselor</span>
+            </blockquote>
+            
+            <div class="article-cta">
+                <h5>Ready to Start the Journey?</h5>
+                <p>We’re here to support you every step of the way, from preparation to post-adoption care.</p>
+                <a href="homepage.html#adopt" class="cta-button">View Adoptable Pets</a>
+                <a href="adoptionProcess.html" class="cta-button secondary">Read Our Full Adoption Process</a>
+            </div>
+            
+            <div class="article-footer">
+                <p><strong>About the Author:</strong> Mark Santos has helped place over 500 animals in loving homes and is passionate about educating first-time adopters. He currently shares his home with two formerly fearful shelter dogs.</p>
+            </div>
+        `
+    },
+    {
+        "headline": "Community Adoption Drive Success",
+        "story": "Our recent adoption event brought together families, volunteers, and pets in need",
+        "image": "images/newsBlogs/famPets.jpg", 
+        "fullContent": `
+            <h2>Record-Breaking Day of Love and New Beginnings!</h2>
+            <p class="article-sub"><em>By Sarah Martinez, Shelter Manager | <i class="fa-regular fa-calendar"></i> November 29, 2025</em></p>
+            <hr>
+            
+            <p class="article-intro">
+                Last Saturday, our shelter transformed into a carnival of compassion for our annual Fall Adoption Drive. Thanks to the overwhelming support of our community, staff, and volunteers, we achieved a record number of placements, proving that Manila is truly a city of animal lovers!
+            </p>
+
+            <h4><i class="fa-solid fa-chart-simple"></i> The Numbers That Changed Lives</h4>
+            
+            <p>
+                We are thrilled to announce that **50 animals** found their forever homes in a single day! The breakdown is as follows:
+            </p>
+            
+            <div class="info-box" style="text-align: center;">
+                <h5>Adoption Drive Results</h5>
+                <p style="font-size: 1.8rem; font-weight: bold; margin: 5px 0 0;">32 Dogs Adopted</p>
+                <p style="font-size: 1.8rem; font-weight: bold; margin: 0 0 5px;">18 Cats Adopted</p>
+                <p style="font-size: 1.1rem; margin-top: 15px;">That's 50 lives forever changed. Thank you!</p>
+            </div>
+
+            <h4><i class="fa-solid fa-star"></i> Featured Success Story: Luna, the Senior Shih Tzu</h4>
+            <p>
+                The highlight of the day was the adoption of Luna, a gentle senior Shih Tzu who had been with us for six months. Despite her sweet nature, older dogs often get overlooked. She finally met her perfect match: a retired couple looking for a calm, loving companion to share their golden years with. Luna's story proves that every dog has a perfect home waiting.
+            </p>
+            
+            <h4><i class="fa-solid fa-hand-holding-heart"></i> The Heroes Behind the Scenes</h4>
+            <p>
+                This event would not be possible without the **85 volunteers** who dedicated their weekend to running stations, coordinating traffic, screening applicants, and showering every pet with love. Their tireless efforts are the heart and soul of Paw Patrol.
+            </p>
+            
+            <blockquote class="article-quote">
+                <i class="fa-solid fa-quote-left"></i>
+                "The energy was electric. Seeing the bonds form right there, instantly, between people and pets—it's why we do what we do. Every adoption opens a kennel for another pet in need."
+                <span class="quote-author">— Jessica Lee, Volunteer Coordinator</span>
+            </blockquote>
+            
+            <div class="article-cta">
+                <h5>Want to be part of the next big event?</h5>
+                <p>Join our volunteer team and experience the magic of adoption firsthand!</p>
+                <a href="homepage.html#help" class="cta-button">Become a Volunteer</a>
+                <a href="homepage.html#adopt" class="cta-button secondary">Find Your Luna</a>
+            </div>
+            
+            <div class="article-footer">
+                <p><strong>About the Author:</strong> Sarah Martinez has been Paw Patrol's Shelter Manager for 6 years. She oversees daily operations, intake processes, and adoption matchmaking.</p>
+            </div>
+        `
+    },
+    {
+        "headline": "How We Rehabilitate Rescued Animals",
+        "story": "Go behind the scenes and see how our team provides medical care and emotional support",
+        "image": "images/newsBlogs/petVet.jpg", 
+        "fullContent": `
+            <h2>From Rescue to Ready: Our Comprehensive Rehabilitation Program</h2>
+            <p class="article-sub"><em>By Dr. Elena Rodriguez, Animal Behavior Specialist | <i class="fa-regular fa-calendar"></i> December 1, 2025</em></p>
+            <hr>
+
+            <p class="article-intro">
+                Rescue is just the first step. Our commitment is to ensure every dog and cat is physically healthy and emotionally sound before finding a new family. Here is a look behind the scenes at the four critical steps of the Paw Patrol Rehabilitation Program.
+            </p>
+
+            <h4><i class="fa-solid fa-stethoscope"></i> Step 1: Immediate Medical Stabilization (The First 48 Hours)</h4>
+            <p>
+                Upon arrival, every pet undergoes a full veterinary exam, including blood work, vaccinations, and microchipping. We address acute injuries, perform necessary surgeries (like dental or orthopedic repair), and stabilize pets recovering from illness or neglect.
+            </p>
+            
+            <div class="info-box">
+                <h5><i class="fa-solid fa-kit-medical"></i> Key Medical Procedures</h5>
+                <ul>
+                    <li>Mandatory Spay/Neuter Surgery</li>
+                    <li>Full Vaccinations (Rabies, DHLPP/FVRCP)</li>
+                    <li>FIV/FeLV and Heartworm Testing</li>
+                    <li>Parasite Treatment and Microchipping</li>
+                </ul>
+            </div>
+
+            <h4><i class="fa-solid fa-brain"></i> Step 2: Behavioral Assessment and Training</h4>
+            <p>
+                Once physically stable, pets enter behavioral training. This is tailored to each animal, focusing on issues like leash reactivity, house-training failure, or fear-based aggression. Our team uses **force-free, positive-reinforcement** methods exclusively.
+            </p>
+
+            <h4><i class="fa-solid fa-people-arrows"></i> Step 3: Socialization and Enrichment</h4>
+            <p>
+                We use controlled, positive exposure to help animals adjust to a home setting. This includes:
+            </p>
+            <ol class="numbered-list">
+                <li>**Desensitization:** Introducing them to common home noises (doorbells, vacuums, children's laughter).</li>
+                <li>**Play Groups:** Safe, monitored play sessions with compatible dogs to build social skills.</li>
+                <li>**Human Bonding:** One-on-one time with volunteers for cuddling and trust-building exercises.</li>
+            </ol>
+
+            <blockquote class="article-quote">
+                <i class="fa-solid fa-quote-left"></i>
+                "The body heals with medicine. The heart heals with time and positive reinforcement. We focus on rebuilding the trust that was lost."  
+                <span class="quote-author">— Dr. Elena Rodriguez, Animal Behavior Specialist</span>
+            </blockquote>
+
+            <h4><i class="fa-solid fa-handshake-angle"></i> Step 4: Adoption Readiness and Matchmaking</h4>
+            <p>
+                Pets are only posted for adoption when they are deemed physically healthy, emotionally stable, and ready to transition into a permanent family structure. Our counselors use their detailed behavioral notes to ensure a perfect match, minimizing the chance of returns.
+            </p>
+
+            <div class="article-cta">
+                <h5>Support our Rehabilitation Efforts</h5>
+                <p>It costs approximately ₱10,000 to medically and behaviorally prepare one pet for adoption.</p>
+                <a href="homepage.html#help" class="cta-button">Donate to Our Care Fund</a>
+                <a href="homepage.html#help" class="cta-button secondary">Apply to Foster</a>
+            </div>
+            
+            <div class="article-footer">
+                <p><strong>About the Author:</strong> Dr. Elena Rodriguez is a certified animal behaviorist and leads our training program. She has dedicated her career to healing the emotional wounds of rescue pets.</p>
+            </div>
+        `
+    }
+];
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id'); // This is the index (0, 1, 2, 3)
+const newsPage = document.getElementById('news-page');
+
+if (id !== null && newsList[id]) {
+    const article = newsList[id];
+
+    // Find the dedicated elements by their ID
+    const imageElement = document.getElementById('detail-image');
+    const headlineElement = document.getElementById('detail-headline');
+    const subtitleElement = document.getElementById('detail-subtitle');
+    const contentBodyElement = document.getElementById('article-content-body');
+    
+    // Inject the data into the dedicated elements
+    imageElement.src = article.image;
+    imageElement.alt = article.headline;
+    headlineElement.textContent = article.headline;
+    subtitleElement.textContent = article.story;
+    
+    // 🚨 Use innerHTML here to render the rich HTML content you wrote
+    contentBodyElement.innerHTML = article.fullContent; 
+
+} else {
+    // Error message if the article index is invalid
+    newsPage.innerHTML = "<h1>Article Not Found</h1><p>Sorry, we couldn't find the news story you were looking for.</p>";
+}
+</script>
+
+</body>
+</html>
