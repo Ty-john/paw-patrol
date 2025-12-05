@@ -6,6 +6,7 @@
     <title>Pet Adoption Form</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="adopt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -44,7 +45,7 @@
     <main class="pet-details-main">
     <section class="pet-details-container">
         <!-- FORM CARD -->
-        <form class="adoption-form">
+        <form class="adoption-form" id="adoptionForm">
         <div class="pet-header">
             <h1>Pet Adoption Form</h1>
             <p>You're one step away from giving a loving home!</p>
@@ -65,17 +66,17 @@
 
             <div class="form-group">
                 <label>Full Name</label>
-                <input type="text" required placeholder="Juan Dela Cruz">
+                <input type="text" id="adoptFullName" required placeholder="Juan Dela Cruz">
             </div>
 
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" required placeholder="you@email.com">
+                <input type="email" id="adoptEmail" required placeholder="you@email.com">
             </div>
 
             <div class="form-group">
                 <label>Phone</label>
-                <input type="text" required placeholder="0912 345 6789">
+                <input type="text" id="adoptPhone" required placeholder="0912 345 6789">
             </div>
 
             </aside>
@@ -86,12 +87,12 @@
 
             <div class="form-group">
                 <label>Address</label>
-                <input type="text" required placeholder="Complete Address">
+                <input type="text" id="adoptAddress" required placeholder="Complete Address">
             </div>
 
             <div class="form-group">
                 <label>Do you have other pets?</label>
-                <select required>
+                <select id="adoptOtherPets" required>
                 <option value="" disabled selected>Select</option>
                 <option>Yes</option>
                 <option>No</option>
@@ -100,7 +101,7 @@
 
             <div class="form-group">
                 <label>Type of Home</label>
-                <select required>
+                <select id="adoptHomeType" required>
                 <option value="" disabled selected>Select</option>
                 <option>House</option>
                 <option>Apartment</option>
@@ -110,14 +111,14 @@
 
             <div class="form-group">
                 <label>Why do you want to adopt?</label>
-                <textarea rows="5" required placeholder="Share your story..."></textarea>
+                <textarea id="adoptStory" rows="5" required placeholder="Share your story..."></textarea>
             </div>
             </aside>
 
         </div>
 
         <div class="pet-actions">
-            <button class="adoptbtn btn-primary">Submit Application</button>
+            <button class="adoptbtn btn-primary" type="submit">Submit Application</button>
             <a href="index.html" class="adoptbtn btn-secondary">Cancel</a>
         </div>
         </form>
@@ -201,11 +202,47 @@
         </section>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="config.js"></script>
+
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const petId = parseInt(urlParams.get('id')); // Get pet ID from URL
+        const petId = parseInt(urlParams.get('id')); 
 
         let petsData = [];
+        let emailjsReady = false;
+
+        // Initialize EmailJS 
+        function initEmailJS() {
+            try {
+                if (window.emailjs) {
+                    emailjs.init({
+                        publicKey: CONFIG.EMAILJS_ADOPT_PUBLIC_KEY
+                    });
+                    emailjsReady = true;
+                    console.log('EmailJS initialized successfully');
+                } else {
+                    console.error('window.emailjs not found, retrying...');
+                    setTimeout(initEmailJS, 500);
+                }
+            } catch (error) {
+                console.error('Error initializing EmailJS:', error);
+                setTimeout(initEmailJS, 500);
+            }
+        }
+
+        window.addEventListener('load', function() {
+            initEmailJS();
+        });
+        if (document.readyState === 'complete') {
+            initEmailJS();
+        }
+        var checkInterval = setInterval(function() {
+            if (window.emailjs && !emailjsReady) {
+                initEmailJS();
+                clearInterval(checkInterval);
+            }
+        }, 500);
 
         // Load pets data from JSON
         async function loadPetsData() {
@@ -231,7 +268,65 @@
             document.getElementById('petAgeDisplay').textContent = pet.age;
         }
 
-        document.addEventListener('DOMContentLoaded', loadPetsData);
-        </script>
+        // Handle adoption form submission
+        function setupAdoptionFormSubmission() {
+            const adoptionForm = document.getElementById('adoptionForm');
+            if (adoptionForm) {
+                adoptionForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    if (!emailjsReady || !window.emailjs) {
+                        alert('Email service is loading. Please wait a moment and try again.');
+                        console.error('EmailJS not ready. Ready:', emailjsReady, 'Exists:', !!window.emailjs);
+                        return;
+                    }
+
+                    const pet = petsData.find(p => p.id === petId);
+                    if (!pet) {
+                        alert('Error: Pet information not found');
+                        return;
+                    }
+
+                    const templateParams = {
+                        to_email: 'pawpatrolorganization@gmail.com',
+                        adopter_name: document.getElementById('adoptFullName').value,
+                        adopter_email: document.getElementById('adoptEmail').value,
+                        adopter_phone: document.getElementById('adoptPhone').value,
+                        adopter_address: document.getElementById('adoptAddress').value,
+                        other_pets: document.getElementById('adoptOtherPets').value,
+                        home_type: document.getElementById('adoptHomeType').value,
+                        adoption_story: document.getElementById('adoptStory').value,
+                        pet_name: pet.name,
+                        pet_breed: pet.breed,
+                        pet_age: pet.age,
+                        submission_date: new Date().toLocaleDateString()
+                    };
+
+                    console.log('Sending adoption application...');
+
+                    // Send email
+                    emailjs.send(CONFIG.EMAILJS_ADOPT_SERVICE_ID, CONFIG.EMAILJS_ADOPT_TEMPLATE_ID, templateParams)
+                        .then(function(response) {
+                            console.log('Email sent!', response);
+                            alert('Thank you for your adoption application! We will review it and contact you shortly.');
+                            adoptionForm.reset();
+                            // Redirect after success
+                            setTimeout(() => {
+                                window.location.href = 'index.html';
+                            }, 2000);
+                        })
+                        .catch(function(error) {
+                            console.error('Email failed:', error);
+                            alert('Error: ' + (error.text || error.message || 'There was an error submitting your application.'));
+                        });
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPetsData();
+            setupAdoptionFormSubmission();
+        });
+    </script>
 </body>
 </html>
